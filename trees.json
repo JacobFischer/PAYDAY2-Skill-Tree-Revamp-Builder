@@ -352,7 +352,7 @@
                     [
                         {
                             "title": "Fire Trap",
-                            "basic": "The duration of the trop mine fire effect is increased by X and the radius of the fire effect is increased by Y.",
+                            "basic": "The duration of the trip mine fire effect is increased by X and the radius of the fire effect is increased by Y.",
                             "aced": "Your trip mines now spread fire around the area of detonation for X seconds in a Y radis."
                         }
                     ]
