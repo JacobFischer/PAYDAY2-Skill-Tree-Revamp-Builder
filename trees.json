@@ -27,7 +27,7 @@
                     [
                         {
                             "title": "Uppers",
-                            "basic": "Adds 7 more first aid kits ti your inventory.",
+                            "basic": "Adds 7 more first aid kits to your inventory.",
                             "aced": "Adds 3 more first aid kits to your inventory. Your deployed first aid kits will be automatically used if a player would go down within a 15 meter radius of the first aid kit. Only 70% of the effect is triggered."
                         },
                         {
@@ -603,7 +603,7 @@
                         },
                         {
                             "title": "Up you Go",
-                            "basic": "You take 30% less damage after gettiung up for 10 seconds.",
+                            "basic": "You take 30% less damage after getting up for 10 seconds.",
                             "aced": "You regain 15% maximum of your health when getting up."
                         }
                     ],
