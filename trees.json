@@ -1,0 +1,136 @@
+[
+    {
+        "title": "Fugitive",
+        "trees": [
+            {
+                "title": "Gunslinger",
+                "tiers": [
+                    [
+                        {
+                            "title": "Fast draw",
+                            "basic": "Decreases the time it takes to equip and un-equip pistols by 80%",
+                            "aced": "You gain 10% accuracy with pistols."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Dance Instructor",
+                            "basic": "Your pistol magazine sizes are increased by 15 bullets.",
+                            "aced": "You gain a 100% increased rate of fire with pistols."
+                        },
+                        {
+                            "title": "Expert Handling",
+                            "basic": "Each successful pistol hit gives you a 10% increased weapon accuracy bonus for 10 seconds and can stack 4 times.",
+                            "aced": "You reload pistols 50% faster."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Gun Play",
+                            "basic": "You deal 5 additional damage with pistols",
+                            "aced": "You deal 10 additional damage with pistols"
+                        },
+                        {
+                            "title": "Akimbo",
+                            "basic": "Akimbo weapons gain 24 weapon stability.",
+                            "aced": "Akimbo weapons gain an additional 8 weapon stability and have a 50% increased total ammo capacity."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Trigger Happy",
+                            "basic": "Each successful pistol hit grants a 10% damage boost for 6 seconds and can stack 4 times.",
+                            "aced": "Increases the damage boost duration to 20."
+                        }
+                    ]
+                ]
+            },
+            {
+                "title": "Relentless",
+                "tiers": [
+                    [
+                        {
+                            "title": "Nine Lives",
+                            "basic": "You gain a 50% increase to bleedout health.",
+                            "aced": "You gain the ability to get downed 1 more time before going into custody."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Running from Death",
+                            "basic": "You reload and swap weapons 80% faster after getting up for 10 seconds.",
+                            "aced": "You move 30% faster for 10 seconds after getting up."
+                        },
+                        {
+                            "title": "Up you Go",
+                            "basic": "You take 30% less damage after gettiung up for 10 seconds.",
+                            "aced": "You regain 15% maximum of your health when getting up."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Swan Song",
+                            "basic": "When getting down, you gain the ability to keep fighting for 3 seconds with a 60% movement penalty before getting down.",
+                            "aced": "You no longer need to reload and can fight for an additional 6 seconds when Sawn Song activates."
+                        },
+                        {
+                            "title": "Feign Death",
+                            "basic": "When you get downed, you have a 25% chance to instantly get revived",
+                            "aced": "The chance to instantly get revived is increased by an additional 50%."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Messiah",
+                            "basic": "While in bleedout, you are instantly revived if you kill an enemy. You have only 1 charge.",
+                            "aced": "Your messiah charge is replenished whenever you use a doctor bag."
+                        }
+                    ]
+                ]
+            },
+            {
+                "title": "Brawler",
+                "tiers": [
+                    [
+                        {
+                            "title": "Martial Arts",
+                            "basic": "Because of training, you take 50% less damage from all melee attacks.",
+                            "aced": "You are 50% more likely to knock down enemies with a melee strike"
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Frency",
+                            "basic": "You start at and connot heal above 30% of your maximum health. You also take 40% less health damage.",
+                            "aced": "Health damage taken is now reduced by 60%."
+                        },
+                        {
+                            "title": "Pumping Iron",
+                            "basic": "Your melee attacks against non-special enemies do 50% more damage.",
+                            "aced": "Your melee attacks against special enemies do 50% more damage."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Bloodthirst",
+                            "basic": "Every kill you get will increase your next melee attack damage by up to 50%, up to a maximum of 200%. This effect gets reset when striking an enemy with a melee attack.",
+                            "aced": "Whenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for X seconds."
+                        },
+                        {
+                            "title": "Counter Strike",
+                            "basic": "When charging your melee weapon you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage.",
+                            "aced": "You gain the ability to counter attack Cloakers."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Beserker",
+                            "basic": "The lower your health, the more damage you do. When your health is below 50%, you will do up to 250% more melee and saw damage.",
+                            "aced": "The lower your health, the more damage you do. When your health is below 50%, you will do up to 100% more damage with ranged weapons as well."
+                        }
+                    ]
+                ]
+            }
+        ]
+    }
+]

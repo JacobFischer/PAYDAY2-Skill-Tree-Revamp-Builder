@@ -1,0 +1,82 @@
+
+#current-subtree {
+	background-color: black;
+	background: black url("bg.jpg") top center;
+	color: white;
+	font-family: sans-serif;
+}
+
+.tree heading {
+	font-weight: bold;
+}
+
+.tree > heading {
+	display: block;
+	font-size: 2em;
+}
+
+.subtree {
+	display: table;
+	width: 40em;
+}
+
+.tier {
+	display: table-row;
+}
+
+.skill {
+	display: table-cell;
+	width: 19em;
+	padding: 0.5em;
+	margin: 0 auto;
+
+	opacity: 0.5;
+}
+
+.skill.availible,
+.skill.taken {
+	opacity: 1;
+	cursor: pointer;
+}
+
+
+.skill:first-child:last-child {
+	font-weight: normal;
+	display: block;
+}
+
+.basic,
+.aced {
+	padding: 0.5em;
+	border: 0.125em solid #bbb;
+	color: #bbb;
+}
+
+.basic.taken,
+.aced.taken {
+	border-color: #fff;
+	border-size: 0.5em;
+	color: #fff;
+}
+
+.availible > .aced.basic-needed {
+	opacity: 0.5;
+	cursor: auto;
+}
+
+.basic > .description,
+.aced > .description {
+	height: 5em;
+}
+
+.skill > .basic {
+	background-color: darkblue;
+}
+
+.skill > .aced {
+	background-color: blue;
+}
+
+.skill .cost {
+	text-align: right;
+}
