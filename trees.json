@@ -19,7 +19,7 @@
                             "aced": "Crew members that use your first aid kits or doctor bags take 20% less damage for 10 seconds."
                         },
                         {
-                            "title": "Painkilers",
+                            "title": "Painkillers",
                             "basic": "Crew members you revive take 30% less damage for 5 seconds.",
                             "aced": "The damage reduction is increased by an additional 20%."
                         }
@@ -52,7 +52,7 @@
                         {
                             "title": "Cable Guy",
                             "basic": "You can cable tie hostages 75% faster.",
-                            "aced": "Increased your supply of cable ties by 4."
+                            "aced": "Increases your supply of cable ties by 4."
                         }
                     ],
                     [
@@ -71,7 +71,7 @@
                         {
                             "title": "Stockholm Syndrome",
                             "basic": "Nearby untied civilians will revive you when you call on them. Your hostages will not flee when they have been rescued by law enforcers.",
-                            "aced": "Civilians reviving you have an X% chance of giving you ammo. Whenever you get into custody, your hostages will trade themselves for your safe return. The effect can occur during assaults."
+                            "aced": "Civilians reviving you have an X% chance of giving you ammo. Whenever you get into custody, your hostages will trade themselves for your safe return. This effect can occur during assaults."
                         },
                         {
                             "title": "Partner in Crime",
@@ -82,8 +82,8 @@
                     [
                         {
                             "title": "Hostage Taker",
-                            "basic": "Having at least one hostage or converted law enforcer makes you regenerate 1.5% health every seconds.",
-                            "aced": "Having at least one hostage or converted law enforcer makes you regenerate 4.5% health every seconds."
+                            "basic": "Having at least one hostage or converted law enforcer makes you regenerate 1.5% health every 5 seconds.",
+                            "aced": "Having at least one hostage or converted law enforcer makes you regenerate 4.5% health every 5 seconds."
                         }
                     ]
                 ]
@@ -138,7 +138,7 @@
         "title": "Enforcer",
         "trees": [
             {
-                "title": "Shotguner",
+                "title": "Shotgunner",
                 "tiers": [
                     [
                         {
@@ -254,14 +254,14 @@
                         {
                             "title": "Carbon Blade",
                             "basic": "You replace your saw blades with carbon blades, increasing your saw efficiency by 40% and reducing the wear down of the blades on enemies by 50%.",
-                            "aced": "You can now saw through shield enemies with your OVE9000 portable saw. WHen killing an enemy with with saw, you have a X% cance to cause nearby enemies to panic. Panic will makes enemies go into short bursts of uncontrollable fear."
+                            "aced": "You can now saw through shield enemies with your OVE9000 portable saw. When killing an enemy with the saw, you have a X% chance to cause nearby enemies to panic. Panic will makes enemies go into short bursts of uncontrollable fear."
                         }
                     ],
                     [
                         {
                             "title": "Fully Loaded",
                             "basic": "Your total ammo capacity is increased by 25%.",
-                            "aced": "Increase the ammount of ammo you gain from ammo boxes by 75%. You also gain a X% base chance to get a throwable from an ammo box. The base chance is increased by Y% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to its base value. Note: Does not work with custom ammo and does not stack with the perk deck skill \"Walk-In Closet\""
+                            "aced": "Increases the amount of ammo you gain from ammo boxes by 75%. You also gain a X% base chance to get a throwable from an ammo box. The base chance is increased by Y% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to its base value. Note: Does not work with custom shotgun ammo and does not stack with the perk deck skill \"Walk-In Closet\"."
                         }
                     ]
                 ]
@@ -277,7 +277,7 @@
                 "tiers": [
                     [
                         {
-                            "title": "Defence Up",
+                            "title": "Defense Up",
                             "basic": "Your sentry guns cost 25% less ammo to deploy.",
                             "aced": "Your sentry guns gain a protective shield."
                         }
@@ -286,7 +286,7 @@
                         {
                             "title": "Sentry Targeting Package",
                             "basic": "Your sentry guns gain a 100% increase in accuracy.",
-                            "aced": "Your sentry guns rotation speed is increased by 150%. Your sentry guns also have 50% more ammunition."
+                            "aced": "Your sentry guns' rotation speed is increased by 150%. Your sentry guns also have 50% more ammunition."
                         },
                         {
                             "title": "Eco Sentry",
@@ -303,14 +303,14 @@
                         {
                             "title": "Jack of all Trades",
                             "basic": "You can deploy and interact with all deployables 50% faster.",
-                            "aced": "You can now equip a second deployable to bring with your. The second deployable has 50% less uses."
+                            "aced": "You can now equip a second deployable to bring with you. The second deployable has 50% less uses."
                         }
                     ],
                     [
                         {
                             "title": "Tower Defense",
                             "basic": "You can now carry 2 extra sentry guns.",
-                            "aced": "You can now carray an additional 2 extra sentry guns."
+                            "aced": "You can now carry an additional 2 extra sentry guns."
                         }
                     ]
                 ]
@@ -328,7 +328,7 @@
                     [
                         {
                             "title": "Combat Engineering",
-                            "basic": "The radius of trip mine explosion is increased by 30%",
+                            "basic": "The radius of trip mine explosion is increased by 30%.",
                             "aced": "Your trip mines deal 50% more damage."
                         },
                         {
@@ -353,7 +353,7 @@
                         {
                             "title": "Fire Trap",
                             "basic": "The duration of the trip mine fire effect is increased by X and the radius of the fire effect is increased by Y.",
-                            "aced": "Your trip mines now spread fire around the area of detonation for X seconds in a Y radis."
+                            "aced": "Your trip mines now spread fire around the area of detonation for X seconds in a Y radius."
                         }
                     ]
                 ]
@@ -376,7 +376,7 @@
                         },
                         {
                             "title": "Fire Control",
-                            "basic": "You gain 8 weapon stability",
+                            "basic": "You gain 8 weapon stability.",
                             "aced": "You gain 12 weapon accuracy while firing from the hip."
                         }
                     ],
@@ -384,7 +384,7 @@
                         {
                             "title": "Shock and Awe",
                             "basic": "You can now hip-fire with your weapons while sprinting.",
-                            "aced": "Killing X enemies with SMG, LMG, and rifles fired in automatic mode will reduce your next reload time by up to 60^. This bonus is reduced by 1% for each buller above 20 in total magazine size, down to a minimum of 20% reload time reduction."
+                            "aced": "Killing X enemies with SMG, LMG, and rifles fired in automatic mode will reduce your next reload time by up to 60%. This bonus is reduced by 1% for each bullet above 20 in total magazine size, down to a minimum of 20% reload time reduction."
                         },
                         {
                             "title": "Fast Fire",
@@ -425,7 +425,7 @@
                         },
                         {
                             "title": "Chameleon",
-                            "basic": "You gain a 25% increased concealment while in casing mode. You can also mark enemies while in casing mode.",
+                            "basic": "You gain 25% increased concealment while in casing mode. You can also mark enemies while in casing mode.",
                             "aced": "You gain the ability to loop 1 camera for 20 seconds, temporarily disabling it from detecting you and your crew."
                         }
                     ],
@@ -445,7 +445,7 @@
                         {
                             "title": "ECM Specialist",
                             "basic": "You can now place 2 ECM jammers instead of just one.",
-                            "aced": "The ECM jammers duration is increased by an 25% and the ECM feedback duration lasts 25% longer. Pagers are delayed by the ECM jammer."
+                            "aced": "The ECM jammer duration is increased by 25% and the ECM feedback duration lasts 25% longer. Pagers are delayed by the ECM jammer."
                         }
                     ]
                 ]
@@ -456,7 +456,7 @@
                     [
                         {
                             "title": "Duck and Cover",
-                            "basic": "Your stamina starts regenerating 25% earlier and 25% faster. You also sprint 25% faster",
+                            "basic": "Your stamina starts regenerating 25% earlier and 25% faster. You also sprint 25% faster.",
                             "aced": "You have a 25% increased chance to dodge when sprinting. You gain 15% to dodge when crouching or ziplining."
                         }
                     ],
@@ -464,7 +464,7 @@
                         {
                             "title": "Evasion",
                             "basic": "You gain 10% additional movement speed and 20% climbing speed.",
-                            "aced": "You gain the ability to sprint in any direction. Your fall damage is also reduced by 75% and you only take armor damage from falling from non fatal heights."
+                            "aced": "You gain the ability to sprint in any direction. Your fall damage is also reduced by 75% and you only take armor damage from falling from non-fatal heights."
                         },
                         {
                             "title": "Thick Skin",
@@ -480,15 +480,15 @@
                         },
                         {
                             "title": "Shockproof",
-                            "basic": "The taser's sock attack has a 30% chance to backfire when targeted at you, casing the taser to be knocked back.",
+                            "basic": "The taser's shock attack has a 30% chance to backfire when targeted at you, causing the taser to be knocked back.",
                             "aced": "When tased, you are able to free yourself from the taser by presing [F] within 2 seconds of being tased."
                         }
                     ],
                     [
                         {
                             "title": "Low Blow",
-                            "basic": "You gain a 1% critical hit chance for every 3 points of concealment under 35 up to a maximum of 10%.",
-                            "aced": "You gain a 1% critical hit chance for every 1 point of concealment under 35 up to a maximum of 10%."
+                            "basic": "You gain a 3% critical hit chance for every 3 points of concealment under 35 up to a maximum of 30%.",
+                            "aced": "You gain a 3% critical hit chance for every 1 point of concealment under 35 up to a maximum of 30%."
                         }
                     ]
                 ]
@@ -498,7 +498,7 @@
                 "tiers": [
                     [
                         {
-                            "title": "Camoflage",
+                            "title": "Camouflage",
                             "basic": "You are 15% less likely to be targeted by enemies when you are close to one of your crew memebers.",
                             "aced": "You are now 30% less likely to be targeted by enemies when you are close to one of your crew memebers."
                         }
@@ -506,12 +506,12 @@
                     [
                         {
                             "title": "Optic Illusions",
-                            "basic": "You gain 1 concealment for each silenced weapon you have equiped.",
+                            "basic": "You gain 1 concealment for each silenced weapon you have equipped.",
                             "aced": "Reduces the concealment penalty of silencers by 2."
                         },
                         {
                             "title": "The Professional",
-                            "basic": "You gain 50% increase to weapon stability and 100% zoom increase with silenced weapons.",
+                            "basic": "You gain a 50% increase to weapon stability and 100% zoom increase with silenced weapons.",
                             "aced": "You gain a 50% increase to weapon accuracy with silenced weapons."
                         }
                     ],
@@ -530,8 +530,8 @@
                     [
                         {
                             "title": "Unseen Strike",
-                            "basic": "If you do not lose any armor or health for 2 seconds, you gain 35% critical hot chance for 4 seconds.",
-                            "aced": "The critical hot chance duration is increased to 12 seconds."
+                            "basic": "If you do not lose any armor or health for 2 seconds, you gain 35% critical hit chance for 4 seconds.",
+                            "aced": "The critical hit chance duration is increased to 12 seconds."
                         }
                     ]
                 ]
@@ -548,7 +548,7 @@
                     [
                         {
                             "title": "Fast draw",
-                            "basic": "Decreases the time it takes to equip and un-equip pistols by 80%",
+                            "basic": "Decreases the time it takes to equip and un-equip pistols by 80%.",
                             "aced": "You gain 10% accuracy with pistols."
                         }
                     ],
@@ -567,8 +567,8 @@
                     [
                         {
                             "title": "Gun Play",
-                            "basic": "You deal 5 additional damage with pistols",
-                            "aced": "You deal 10 additional damage with pistols"
+                            "basic": "You deal 5 additional damage with pistols.",
+                            "aced": "You now deal 10 additional damage with pistols."
                         },
                         {
                             "title": "Akimbo",
@@ -604,18 +604,18 @@
                         {
                             "title": "Up you Go",
                             "basic": "You take 30% less damage after getting up for 10 seconds.",
-                            "aced": "You regain 15% maximum of your health when getting up."
+                            "aced": "You regain 15% of your maximum health when getting up."
                         }
                     ],
                     [
                         {
                             "title": "Swan Song",
-                            "basic": "When getting down, you gain the ability to keep fighting for 3 seconds with a 60% movement penalty before getting down.",
-                            "aced": "You no longer need to reload and can fight for an additional 6 seconds when Sawn Song activates."
+                            "basic": "When getting downed, you gain the ability to keep fighting for 3 seconds with a 60% movement penalty before going down.",
+                            "aced": "You no longer need to reload and can fight for an additional 6 seconds when Swan Song activates."
                         },
                         {
                             "title": "Feign Death",
-                            "basic": "When you get downed, you have a 25% chance to instantly get revived",
+                            "basic": "When you get downed, you have a 25% chance to instantly get revived.",
                             "aced": "The chance to instantly get revived is increased by an additional 50%."
                         }
                     ],
@@ -635,13 +635,13 @@
                         {
                             "title": "Martial Arts",
                             "basic": "Because of training, you take 50% less damage from all melee attacks.",
-                            "aced": "You are 50% more likely to knock down enemies with a melee strike"
+                            "aced": "You are 50% more likely to knock down enemies with a melee strike."
                         }
                     ],
                     [
                         {
-                            "title": "Frency",
-                            "basic": "You start at and connot heal above 30% of your maximum health. You also take 40% less health damage.",
+                            "title": "Frenzy",
+                            "basic": "You start at and cannot heal above 30% of your maximum health. You also take 40% less health damage.",
                             "aced": "Health damage taken is now reduced by 60%."
                         },
                         {
@@ -653,7 +653,7 @@
                     [
                         {
                             "title": "Bloodthirst",
-                            "basic": "Every kill you get will increase your next melee attack damage by up to 50%, up to a maximum of 200%. This effect gets reset when striking an enemy with a melee attack.",
+                            "basic": "Every kill you get will increase your next melee attack damage by 50%, up to a maximum of 200%. This effect gets reset when striking an enemy with a melee attack.",
                             "aced": "Whenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for X seconds."
                         },
                         {
@@ -664,7 +664,7 @@
                     ],
                     [
                         {
-                            "title": "Beserker",
+                            "title": "Berserker",
                             "basic": "The lower your health, the more damage you do. When your health is below 50%, you will do up to 250% more melee and saw damage.",
                             "aced": "The lower your health, the more damage you do. When your health is below 50%, you will do up to 100% more damage with ranged weapons as well."
                         }
