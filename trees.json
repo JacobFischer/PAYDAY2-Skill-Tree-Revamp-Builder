@@ -480,7 +480,7 @@
                         },
                         {
                             "title": "Shockproof",
-                            "basic": "The taser's sock attack has a 30% chance to backfire when targeted at you, casing the taser to be knocked back.",
+                            "basic": "The taser's shock attack has a 30% chance to backfire when targeted at you, causing the taser to be knocked back.",
                             "aced": "When tased, you are able to free yourself from the taser by presing [F] within 2 seconds of being tased."
                         }
                     ],
