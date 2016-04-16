@@ -1,3 +1,7 @@
+// The main script that does the heavy lifting.
+// Don't judge this code too harshly. I threw it all togeather in a few hours.
+// - Jacob Fischer
+
 var payday = {
     points: 0,
 };
@@ -56,9 +60,11 @@ function updateHTML() {
             .html("Requires Infamy");
     }
 
-    var subtree = payday.currentSubtree;
-    $("#" + subtree.number + "-points").html(subtree.points);
+    forEachSubtree(function(subtree) {
+        $("#" + subtree.number + "-points").html(subtree.points);
+    });
 
+    var subtree = payday.currentSubtree;
     for(var i = 0; i < subtree.tiers.length; i++) {
         var tier = subtree.tiers[i];
         for(var j = 0; j < tier.length; j++) {
@@ -73,6 +79,15 @@ function updateHTML() {
 
         }
     }
+};
+
+function updateURL() {
+	var values = {};
+	forEachSkill(function(skill) {
+		values[skill.number] = (skill.taken ? skill.taken[0].toLowerCase() : undefined);
+	});
+
+	queryString.setAll(values);
 };
 
 function calculatePoints() {
@@ -125,8 +140,7 @@ function calculatePoints() {
         calculatePoints();
     }
 
-    console.log("00000")
-
+    updateURL();
     updateHTML();
 };
 
@@ -274,6 +288,19 @@ function initHTML() {
     })
 };
 
+function updateFromURL() {
+    var queryParms = queryString.getAll();
+    forEachSkill(function(skill, tier, subtree, tree) {
+        var q = queryParms[skill.number];
+        if(q) {
+            skill.taken = q === "b" ? "basic" : "aced";
+        }
+        else {
+            skill.taken = false;
+        }
+    });
+};
+
 function init() {
     var $trees = $("#trees");
 
@@ -293,20 +320,30 @@ function init() {
         }
     }
 
+    var n = 1;
     forEachSkill(function(skill, tier, subtree, tree) {
         skill.tier = tier;
         skill.subtree = subtree;
+        skill.number = n++;
 
         tier.subtree = subtree;
     });
+
+    updateFromURL();
 
     initHTML();
 
     payday.$tree = $("#current-subtree");
 
     setSubtree(payday.trees[0].trees[0]);
+
+    window.onpopstate = function() {
+        updateFromURL();
+        calculatePoints();
+    };
 };
 
+// get the tree data from the json file
 $.ajax({
     dataType: "json",
     url: "trees.json",
@@ -321,5 +358,3 @@ $.ajax({
         console.error(data);
     }
 });
-
-console.log("h");
