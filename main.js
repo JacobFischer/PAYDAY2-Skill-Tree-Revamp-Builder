@@ -169,7 +169,7 @@ function buildTable() {
             .addClass("tier")
             .append($("<td>")
                 .addClass("tier-number")
-                .html(t)
+                .html(t+1)
             );
 
         var m = maxSkillsInTier;
