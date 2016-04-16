@@ -174,7 +174,7 @@
                     [
                         {
                             "title": "Overkill",
-                            "basic": "When you kill an enemy with a shotgun or the OVE9000 portable saw, you recieve a 75% damage increase for 10 seconds.",
+                            "basic": "When you kill an enemy with a shotgun or the OVE9000 portable saw, you receive a 75% damage increase for 10 seconds.",
                             "aced": "The damage bonus now applies to all weapons. Skill must still be activated using a shotgun or the OVE9000 portable saw."
                         }
                     ]
@@ -187,7 +187,7 @@
                         {
                             "title": "Oppressor",
                             "basic": "Your weapons are 75% more effective at threatening enemies.",
-                            "aced": "Reduces the visual effect duration of flashbands by 75%."
+                            "aced": "Reduces the visual effect duration of flashbangs by 75%."
                         }
                     ],
                     [
@@ -481,7 +481,7 @@
                         {
                             "title": "Shockproof",
                             "basic": "The taser's shock attack has a 30% chance to backfire when targeted at you, causing the taser to be knocked back.",
-                            "aced": "When tased, you are able to free yourself from the taser by presing [F] within 2 seconds of being tased."
+                            "aced": "When tased, you are able to free yourself from the taser by pressing [F] within 2 seconds of being tased."
                         }
                     ],
                     [
@@ -499,8 +499,8 @@
                     [
                         {
                             "title": "Camouflage",
-                            "basic": "You are 15% less likely to be targeted by enemies when you are close to one of your crew memebers.",
-                            "aced": "You are now 30% less likely to be targeted by enemies when you are close to one of your crew memebers."
+                            "basic": "You are 15% less likely to be targeted by enemies when you are close to one of your crew members.",
+                            "aced": "You are now 30% less likely to be targeted by enemies when you are close to one of your crew members."
                         }
                     ],
                     [
