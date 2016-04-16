@@ -1,5 +1,545 @@
 [
     {
+        "title": "Mastermind",
+        "trees": [
+            {
+                "title": "Medic",
+                "tiers": [
+                    [
+                        {
+                            "title": "Combat Medic",
+                            "basic": "After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.",
+                            "aced": "Reviving a crew member gives them 30% more health."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Quick Fix",
+                            "basic": "Decreases your first aid kit and doctor bag deploy time by 50%.",
+                            "aced": "Crew members that use your first aid kits or doctor bags take 20% less damage for 10 seconds."
+                        },
+                        {
+                            "title": "Painkilers",
+                            "basic": "Crew members you revive take 30% less damage for 5 seconds.",
+                            "aced": "The damage reduction is increased by an additional 20%."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Uppers",
+                            "basic": "Adds 7 more first aid kits ti your inventory.",
+                            "aced": "Adds 3 more first aid kits to your inventory. Your deployed first aid kits will be automatically used if a player would go down within a 15 meter radius of the first aid kit. Only 70% of the effect is triggered."
+                        },
+                        {
+                            "title": "Combat Doctor",
+                            "basic": "You can now place 2 doctor bags instead of just one.",
+                            "aced": "Your doctor bags have 2 more charges."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Inspire",
+                            "basic": "You revive crew members 50% faster. Shouting at your teammates will increase their movement speed 20% by for 30 seconds.",
+                            "aced": "There is 75% a chance that you can revive crew members at a distance by shouting at them."
+                        }
+                    ]
+                ]
+            },
+            {
+                "title": "Controller",
+                "tiers": [
+                    [
+                        {
+                            "title": "Cable Guy",
+                            "basic": "You can cable tie hostages 75% faster.",
+                            "aced": "Increased your supply of cable ties by 4."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Endurance",
+                            "basic": "Increases your stamina by 150% and your crew's stamina by 50%. Civilians are intimidated by the noise you make and remain intimidated 50% longer.",
+                            "aced": "You can reload your weapon while sprinting."
+                        },
+                        {
+                            "title": "Joker",
+                            "basic": "You can convert a non-special enemy to fight on your side. This can not be done during stealth and the enemy must have surrendered in order for you to convert it. You can only convert one enemy at a time.",
+                            "aced": "The converted enemy gains 55% more health and deals 45% more damage. The time to convert an enemy is reduced by 65%. The power and range of your intimidation is increased by 50%."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Stockholm Syndrome",
+                            "basic": "Nearby untied civilians will revive you when you call on them. Your hostages will not flee when they have been rescued by law enforcers.",
+                            "aced": "Civilians reviving you have an X% chance of giving you ammo. Whenever you get into custody, your hostages will trade themselves for your safe return. The effect can occur during assaults."
+                        },
+                        {
+                            "title": "Partner in Crime",
+                            "basic": "Having a converted enemy increases your movement speed by 10%. Your converted enemy takes an additional 40% less damage.",
+                            "aced": "Having a converted enemy increases your health by 30%. Your converted enemy takes an additional 60% less damage."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Hostage Taker",
+                            "basic": "Having at least one hostage or converted law enforcer makes you regenerate 1.5% health every seconds.",
+                            "aced": "Having at least one hostage or converted law enforcer makes you regenerate 4.5% health every seconds."
+                        }
+                    ]
+                ]
+            },
+            {
+                "title": "Sharpshooter",
+                "tiers": [
+                    [
+                        {
+                            "title": "Stable Shot",
+                            "basic": "You gain 8 weapon stability.",
+                            "aced": "You gain 8 weapon accuracy while standing still."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Rifleman",
+                            "basic": "Your snap to zoom is 100% faster with all weapons.",
+                            "aced": "Your weapon zoom level is increased by 25% with all weapons."
+                        },
+                        {
+                            "title": "Marksman",
+                            "basic": "You gain 8 weapon accuracy with all SMG, Assault rifle, and Snipers fired in single shot.",
+                            "aced": "You gain a 20% accuracy bonus while aiming down sights with all SMG, Assault rifle, and Snipers fired in single shot."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Spotter",
+                            "basic": "Enemies you mark take 15% more damage.",
+                            "aced": "Enemies you mark take an additional X% damage when further than Y meters."
+                        },
+                        {
+                            "title": "Aggressive Reload",
+                            "basic": "Killing an enemy by headshot with the last bullet in the magazine will reduce your reload time by 30% for 2 seconds. Can only be triggered by SMG, Assault rifle, and Snipers fired in single shot.",
+                            "aced": "Any killing headshot will reduce your reload time by 50% for 2 seconds. Can only be triggered by SMG, Assault rifle, and Snipers fired in single shot."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Ammo Efficiency",
+                            "basic": "Hitting 6 headshots in a row will refund 1 bullet to your used weapon. Can only be triggered by SMG, Assault rifle, and Snipers fired in single shot.",
+                            "aced": "Hitting 3 headshots in a row will refund 1 bullet to your used weapon. Can only be triggered by SMG, Assault rifle, and Snipers fired in single shot."
+                        }
+                    ]
+                ]
+            }
+        ]
+    },
+
+    {
+        "title": "Enforcer",
+        "trees": [
+            {
+                "title": "Shotguner",
+                "tiers": [
+                    [
+                        {
+                            "title": "Underdog",
+                            "basic": "When you are surrounded by three enemies or more, you receive a 10% damage bonus.",
+                            "aced": "When you are surrounded by three enemies or more, you receive 10% less damage from enemies."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Shotgun CQB",
+                            "basic": "You reload shotguns 25% faster.",
+                            "aced": "You reload shotguns 25% faster. You gain a 125% increased steel sight speed when using shotguns."
+                        },
+                        {
+                            "title": "Shotgun Impact",
+                            "basic": "Your weapon stability with all shotguns is increased by 8.",
+                            "aced": "You deal 35% more damage with shotguns."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Far Away",
+                            "basic": "Your accuracy bonus while aiming down sights with shotguns is increased by 40%.",
+                            "aced": "You gain a 35% increased effective range with shotguns when aiming down sights."
+                        },
+                        {
+                            "title": "Close By",
+                            "basic": "You can now hip-fire with your shotguns while sprinting.",
+                            "aced": "Your rate of fire is increased by 35% while firing from the hip with single shot shotguns. Your shotguns with magazines have their magazine sizes increased by 15 shells."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Overkill",
+                            "basic": "When you kill an enemy with a shotgun or the OVE9000 portable saw, you recieve a 75% damage increase for 10 seconds.",
+                            "aced": "The damage bonus now applies to all weapons. Skill must still be activated using a shotgun or the OVE9000 portable saw."
+                        }
+                    ]
+                ]
+            },
+            {
+                "title": "Armorer",
+                "tiers": [
+                    [
+                        {
+                            "title": "Oppressor",
+                            "basic": "Your weapons are 75% more effective at threatening enemies.",
+                            "aced": "Reduces the visual effect duration of flashbands by 75%."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Die Hard",
+                            "basic": "You can use your primary weapon in bleedout.",
+                            "aced": "Your armor recovers 15% faster."
+                        },
+                        {
+                            "title": "Transporter",
+                            "basic": "You can throw bags 50% further.",
+                            "aced": "You can now carry 2 bags at once."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Bulletproof",
+                            "basic": "The recovery rate of you and your crew is increased by 25%.",
+                            "aced": "Improves your armor so you can absorb 35% more damage."
+                        },
+                        {
+                            "title": "Bullseye",
+                            "basic": "You regenerate 10 armor for each successful headshot. This effect cannot occur more than once every 2 seconds.",
+                            "aced": "You regenerate an additional 20 armor for each successful headshot."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Iron Man",
+                            "basic": "When you melee or shoot shield enemies there's a chance that they get knocked over by the sheer force. The chance depends on the damage of the weapon used.",
+                            "aced": "You gain the ability to wear the Improved Combined Tactical Vest."
+                        }
+                    ]
+                ]
+            },
+            {
+                "title": "Ammunition Specialist",
+                "tiers": [
+                    [
+                        {
+                            "title": "Stable Shot",
+                            "basic": "You gain a 50% increased ammo box pick up range.",
+                            "aced": "Every 10th enemy you kill will drop an extra ammo box."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Bullet Storm",
+                            "basic": "Directly after you deploy an ammo bag, you can fire your weapon for 0 seconds without depleting any ammunition.",
+                            "aced": "You can fire for 15 seconds longer without depleting your ammunition."
+                        },
+                        {
+                            "title": "Portable Saw",
+                            "basic": "Unlocks the OVE9000 portable saw for you to use as a secondary weapon.",
+                            "aced": "You gain 1 extra saw blade for the OVE9000 portable saw."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Ammunition Specialist",
+                            "basic": "You can now place 2 ammo bags instead of just one.",
+                            "aced": "Each ammo bag contains additional 200% ammunition."
+                        },
+                        {
+                            "title": "Carbon Blade",
+                            "basic": "You replace your saw blades with carbon blades, increasing your saw efficiency by 40% and reducing the wear down of the blades on enemies by 50%.",
+                            "aced": "You can now saw through shield enemies with your OVE9000 portable saw. WHen killing an enemy with with saw, you have a X% cance to cause nearby enemies to panic. Panic will makes enemies go into short bursts of uncontrollable fear."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Fully Loaded",
+                            "basic": "Your total ammo capacity is increased by 25%.",
+                            "aced": "Increase the ammount of ammo you gain from ammo boxes by 75%. You also gain a X% base chance to get a throwable from an ammo box. The base chance is increased by Y% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to its base value. Note: Does not work with custom ammo and does not stack with the perk deck skill \"Walk-In Closet\""
+                        }
+                    ]
+                ]
+            }
+        ]
+    },
+
+        {
+        "title": "Technician",
+        "trees": [
+            {
+                "title": "Engineer",
+                "tiers": [
+                    [
+                        {
+                            "title": "Defence Up",
+                            "basic": "Your sentry guns cost 25% less ammo to deploy.",
+                            "aced": "Your sentry guns gain a protective shield."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Sentry Targeting Package",
+                            "basic": "Your sentry guns gain a 100% increase in accuracy.",
+                            "aced": "Your sentry guns rotation speed is increased by 150%. Your sentry guns also have 50% more ammunition."
+                        },
+                        {
+                            "title": "Eco Sentry",
+                            "basic": "Your sentry guns cost 25% less ammunition to deploy.",
+                            "aced": "Your sentry guns gain 150% increased health."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Engineering",
+                            "basic": "You can now select a less noisy version of the sentry guns, making them much less likely to be targeted by enemies.",
+                            "aced": "You can now toggle AP rounds on your sentry guns, lowering the rate of fire and ammunition count, but increasing damage and allowing it to pierce through enemies and shields."
+                        },
+                        {
+                            "title": "Jack of all Trades",
+                            "basic": "You can deploy and interact with all deployables 50% faster.",
+                            "aced": "You can now equip a second deployable to bring with your. The second deployable has 50% less uses."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Tower Defense",
+                            "basic": "You can now carry 2 extra sentry guns.",
+                            "aced": "You can now carray an additional 2 extra sentry guns."
+                        }
+                    ]
+                ]
+            },
+            {
+                "title": "Breacher",
+                "tiers": [
+                    [
+                        {
+                            "title": "Hardware Expert",
+                            "basic": "You fix drills and saws 25% faster. Drills are silent, civilians and guards have to see the drills in order to get alerted. Gives you the ability to toggle sensor mode on trip mines.",
+                            "aced": "Gives your drills and saws a 10% chance to automatically restart after breaking."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Combat Engineering",
+                            "basic": "The radius of trip mine explosion is increased by 30%",
+                            "aced": "Your trip mines deal 50% more damage."
+                        },
+                        {
+                            "title": "Drill Sawgeant",
+                            "basic": "Your drill and saw efficiency is increased by 15%.",
+                            "aced": "Further increases your drill and saw efficiency by 15%."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "More Firepower",
+                            "basic": "You gain 1 more shape charge and 4 more trip mines.",
+                            "aced": "You gain 2 more shape charges and 7 more trip mines."
+                        },
+                        {
+                            "title": "Kick Starter",
+                            "basic": "Your drills and saws gain an additional 20% chance to automatically restart after breaking.",
+                            "aced": "You gain the ability to restart a drill by hitting it with a melee attack. You get 1 chance for each time it breaks with a 50% chance rate."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Fire Trap",
+                            "basic": "The duration of the trop mine fire effect is increased by X and the radius of the fire effect is increased by Y.",
+                            "aced": "Your trip mines now spread fire around the area of detonation for X seconds in a Y radis."
+                        }
+                    ]
+                ]
+            },
+            {
+                "title": "Oppressor",
+                "tiers": [
+                    [
+                        {
+                            "title": "Steady Grip",
+                            "basic": "You gain 8 weapon accuracy.",
+                            "aced": "You gain a decreased stability penalty when shooting while moving."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Heavy Impact",
+                            "basic": "Your shots have a 25% chance to knock down enemies.",
+                            "aced": "Your shots now have a 50% chance to knock down enemies."
+                        },
+                        {
+                            "title": "Fire Control",
+                            "basic": "You gain 8 weapon stability",
+                            "aced": "You gain 12 weapon accuracy while firing from the hip."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Shock and Awe",
+                            "basic": "You can now hip-fire with your weapons while sprinting.",
+                            "aced": "Killing X enemies with SMG, LMG, and rifles fired in automatic mode will reduce your next reload time by up to 60^. This bonus is reduced by 1% for each buller above 20 in total magazine size, down to a minimum of 20% reload time reduction."
+                        },
+                        {
+                            "title": "Fast Fire",
+                            "basic": "Your SMG, LMG, and rifles fired in automatic mode gain 15 more bullets in the magazine. This does not affect the \"Shock and Awe\" skill.",
+                            "aced": "You gain the ability to pierce body armor."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Body Expertise",
+                            "basic": "15% of the enemy's headshot multiplier is applied to the enemy's body with SMG, LMG, and rifles fired in automatic mode.",
+                            "aced": "50% of the enemy's headshot multiplier is applied to the enemy's body with SMG, LMG, and rifles fired in automatic mode."
+                        }
+                    ]
+                ]
+            }
+        ]
+    },
+
+            {
+        "title": "Ghost",
+        "trees": [
+            {
+                "title": "Covert Ops",
+                "tiers": [
+                    [
+                        {
+                            "title": "Defense Up",
+                            "basic": "You gain the ability to automatically mark enemies within a 10 meter radius around you while standing still for 3.5 seconds while in stealth.",
+                            "aced": "You can pick up items while in casing mode. You also gain 30% more value to loose items and cash that you pick up."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Cleaner",
+                            "basic": "You gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%.",
+                            "aced": "You gain 1 additional body bag in your inventory and you gain the ability to carry 1 more body bag in addition to the gained body bag."
+                        },
+                        {
+                            "title": "Chameleon",
+                            "basic": "You gain a 25% increased concealment while in casing mode. You can also mark enemies while in casing mode.",
+                            "aced": "You gain the ability to loop 1 camera for 20 seconds, temporarily disabling it from detecting you and your crew."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Undertaker",
+                            "basic": "You gain the ability to place 2 body bag cases.",
+                            "aced": "You lockpick 50% faster. You also gain the ability to lockpick safes."
+                        },
+                        {
+                            "title": "ECM Overdrive",
+                            "basic": "Your ECM jammer and feedback duration is increased by 25%.",
+                            "aced": "Your ECM jammer can now also be used to open certain electronic doors."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "ECM Specialist",
+                            "basic": "You can now place 2 ECM jammers instead of just one.",
+                            "aced": "The ECM jammers duration is increased by an 25% and the ECM feedback duration lasts 25% longer. Pagers are delayed by the ECM jammer."
+                        }
+                    ]
+                ]
+            },
+            {
+                "title": "Commando",
+                "tiers": [
+                    [
+                        {
+                            "title": "Duck and Cover",
+                            "basic": "Your stamina starts regenerating 25% earlier and 25% faster. You also sprint 25% faster",
+                            "aced": "You have a 25% increased chance to dodge when sprinting. You gain 15% to dodge when crouching or ziplining."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Evasion",
+                            "basic": "You gain 10% additional movement speed and 20% climbing speed.",
+                            "aced": "You gain the ability to sprint in any direction. Your fall damage is also reduced by 75% and you only take armor damage from falling from non fatal heights."
+                        },
+                        {
+                            "title": "Thick Skin",
+                            "basic": "Increases your melee weapon's concealment by 2.",
+                            "aced": "Increases all your ballistic vests' concealment by 4."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Sneaky Bastard",
+                            "basic": "You gain a 1% dodge chance for every 3 points of concealment under 35 up to a maximum of 10%.",
+                            "aced": "You gain a 1% dodge chance for every 1 point of concealment under 35 up to a maximum of 10%."
+                        },
+                        {
+                            "title": "Shockproof",
+                            "basic": "The taser's sock attack has a 30% chance to backfire when targeted at you, casing the taser to be knocked back.",
+                            "aced": "When tased, you are able to free yourself from the taser by presing [F] within 2 seconds of being tased."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Low Blow",
+                            "basic": "You gain a 1% critical hit chance for every 3 points of concealment under 35 up to a maximum of 10%.",
+                            "aced": "You gain a 1% critical hit chance for every 1 point of concealment under 35 up to a maximum of 10%."
+                        }
+                    ]
+                ]
+            },
+            {
+                "title": "Silent Killer",
+                "tiers": [
+                    [
+                        {
+                            "title": "Camoflage",
+                            "basic": "You are 15% less likely to be targeted by enemies when you are close to one of your crew memebers.",
+                            "aced": "You are now 30% less likely to be targeted by enemies when you are close to one of your crew memebers."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Optic Illusions",
+                            "basic": "You gain 1 concealment for each silenced weapon you have equiped.",
+                            "aced": "Reduces the concealment penalty of silencers by 2."
+                        },
+                        {
+                            "title": "The Professional",
+                            "basic": "You gain 50% increase to weapon stability and 100% zoom increase with silenced weapons.",
+                            "aced": "You gain a 50% increase to weapon accuracy with silenced weapons."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Dire Need",
+                            "basic": "When your armor is depleted, the first shot on any enemies will cause those enemies to stagger. This effect ends when your armor regenerates.",
+                            "aced": "This effect persists for 6 seconds after your armor has regenerated."
+                        },
+                        {
+                            "title": "Subsonic Rounds",
+                            "basic": "You deal 15% more damage with all silenced weapons.",
+                            "aced": "You deal an additional 15% more damage with all silenced weapons."
+                        }
+                    ],
+                    [
+                        {
+                            "title": "Unseen Strike",
+                            "basic": "If you do not lose any armor or health for 2 seconds, you gain 35% critical hot chance for 4 seconds.",
+                            "aced": "The critical hot chance duration is increased to 12 seconds."
+                        }
+                    ]
+                ]
+            }
+        ]
+    },
+
+    {
         "title": "Fugitive",
         "trees": [
             {

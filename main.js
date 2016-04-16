@@ -26,7 +26,6 @@ function forEachSkill(callback) {
     forEachSubtree(function(subtree, tree) {
         for(var t = subtree.tiers.length-1; t >= 0; t--) {
             var tier = subtree.tiers[t];
-            tier.number = t;
 
             for(var s = 0; s < tier.length; s++) { // reverse order so we start at the top skill and go down for html elements
                 var skill = tier[s];
@@ -37,9 +36,29 @@ function forEachSkill(callback) {
 };
 
 function updateHTML() {
-    $("#points").html(payday.points);
+    payday.$points
+        .toggleClass("maxed", payday.points >= 100)
+        .html(payday.points);
+
+    payday.$pointsMessage
+        .removeClass("error warning")
+        .html("");
+
+
+    if(payday.points >= 105) {
+        payday.$pointsMessage
+            .addClass("error")
+            .html("Invalid!");
+    }
+    else if(payday.points > 100 && payday.points < 105) {
+        payday.$pointsMessage
+            .addClass("warning")
+            .html("Requires Infamy");
+    }
 
     var subtree = payday.currentSubtree;
+    $("#" + subtree.number + "-points").html(subtree.points);
+
     for(var i = 0; i < subtree.tiers.length; i++) {
         var tier = subtree.tiers[i];
         for(var j = 0; j < tier.length; j++) {
@@ -85,7 +104,7 @@ function calculatePoints() {
         if(tier.number > 0) {
             var neededPointsInTier = skillPointsPerTier[tier.number];
             var pts = subtree.pointsPerTier[tier.number - 1];
-            console.log("pts in ", skill.title, "is", pts)
+
             if(neededPointsInTier <= pts) {
                 skill.availible = true;
             }
@@ -99,9 +118,6 @@ function calculatePoints() {
                 recalculate = true;
             }
             skill.taken = false;
-        }
-        else {
-            console.log("skill", skill.title, "is availible")
         }
     });
 
@@ -207,11 +223,75 @@ function buildTable() {
             }
         }
     }
-}
+};
+
+function setSubtree(subtree) {
+    payday.currentSubtree = subtree;
+
+    $(".subtree-info").removeClass("active");
+    $("#subtree-info-" + subtree.number).addClass("active");
+
+    buildTable();
+    calculatePoints();
+};
+
+function initHTML() {
+    payday.$treesList = $("#trees-list");
+    payday.$points = $("#points");
+    payday.$pointsMessage = $("#points-message");
+
+    var $trees = {};
+    forEachSubtree(function(subtree, tree) {
+        if(!$trees[tree.title]) {
+            var $treeDiv = $("<li>")
+                .append($("<heading>" + tree.title + "</heading>"))
+                .appendTo(payday.$treesList);
+
+            $trees[tree.title] = $("<ul>")
+                .appendTo($treeDiv);
+        }
+
+        $treeUL = $trees[tree.title];
+
+        var $li = $("<li>")
+            .addClass("subtree-info")
+            .attr("id", "subtree-info-" + subtree.number)
+            .append($("<span>")
+                .addClass("subtree-link")
+                .html(subtree.title)
+            )
+            .append($("<span>")
+                .attr("id", subtree.number+ "-points")
+                .addClass("points")
+                .html("0")
+            )
+            .on("click", function(event) {
+                event.stopPropagation();
+                setSubtree(subtree);
+            });
+
+        $treeUL.append($li);
+    })
+};
 
 function init() {
     var $trees = $("#trees");
-    payday.currentSubtree = payday.trees[0].trees[0];
+
+    var subtrees = 0;
+    for(var i = 0; i < payday.trees.length; i++) {
+        var tree = payday.trees[i];
+        tree.number = i;
+
+        for(var j = 0; j < tree.trees.length; j++) { // subtrees for each "main" tree, e.g. Mastermind
+            var subtree = tree.trees[j];
+            subtree.number = subtrees;
+            subtrees++;
+
+            for(var t = subtree.tiers.length-1; t >= 0; t--) {
+                subtree.tiers[t].number = t;
+            }
+        }
+    }
 
     forEachSkill(function(skill, tier, subtree, tree) {
         skill.tier = tier;
@@ -220,12 +300,11 @@ function init() {
         tier.subtree = subtree;
     });
 
+    initHTML();
+
     payday.$tree = $("#current-subtree");
 
-    buildTable();
-
-    calculatePoints();
-
+    setSubtree(payday.trees[0].trees[0]);
 };
 
 $.ajax({

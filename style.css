@@ -1,9 +1,73 @@
 
-#current-subtree {
-	background-color: black;
-	background: black url("bg.jpg") top center;
-	color: white;
+*, html, body {
 	font-family: sans-serif;
+	color: white;
+	line-height: 1.2em;
+
+	-webkit-transition: all 150ms ease-in-out;
+	-moz-transition: all 150ms ease-in-out;
+	-o-transition: all 150ms ease-in-out;
+	-ms-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+}
+
+html {
+	background: black url("bg.jpg") top left;
+}
+
+ul > li {
+	margin-left: 2em;
+}
+
+.warning {
+	color: yellow;
+}
+
+.error {
+	color: red;
+}
+
+/*** Main ***/
+
+#main > footer {
+	clear: both;
+	/* text-align: center; */
+	padding: 0 1em;
+	font-weight: bold;
+}
+
+/*** Skill Tree ***/
+
+#current-subtree {
+	float: left;
+	width: 50em;
+	padding-left: 1.5em;
+}
+
+h1,
+#current-subtree > heading {
+	font-weight: bold;
+	font-size: 2em;
+	text-align: center;
+	width: 100%;
+	display: block;
+
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+h1 {
+	font-size: 3em;
+	line-height: 3em;
+	text-align: left;
+	padding: 0 0.25em;
+}
+
+#current-subtree > table {
+	margin: 0 auto;
 }
 
 .tree heading {
@@ -30,7 +94,7 @@
 	padding: 0.5em;
 	margin: 0 auto;
 
-	opacity: 0.5;
+	opacity: 0.666;
 }
 
 .skill.availible,
@@ -39,6 +103,11 @@
 	cursor: pointer;
 }
 
+.tier-number {
+	font-weight: bold;
+	padding-right: 2em;
+	vertical-align: middle;
+}
 
 .skill:first-child:last-child {
 	font-weight: normal;
@@ -50,17 +119,17 @@
 	padding: 0.5em;
 	border: 0.125em solid #bbb;
 	color: #bbb;
+	overflow-y: overlay;
 }
 
 .basic.taken,
 .aced.taken {
-	border-color: #fff;
-	border-size: 0.5em;
+	border-color: #fc901d;
 	color: #fff;
 }
 
 .availible > .aced.basic-needed {
-	opacity: 0.5;
+	opacity: 0.666;
 	cursor: auto;
 }
 
@@ -69,14 +138,80 @@
 	height: 5em;
 }
 
+.skill > heading {
+	font-weight: bold;
+}
+
 .skill > .basic {
-	background-color: darkblue;
+	background-color: #2C536D;
 }
 
 .skill > .aced {
-	background-color: blue;
+	background-color: #3885AB;
 }
 
 .skill .cost {
 	text-align: right;
+	font-weight: bold
 }
+
+
+/*** Info Pane ***/
+
+#info-pane {
+	float: left;
+	width: 17.5em;
+	background: #2C536D;
+	padding: 1em;
+	border: 0.125em #bbb solid;
+}
+
+#points.maxed {
+	font-weight: bold;
+}
+
+#points-message {
+	margin-left: 0.5em;
+}
+
+#trees-list {
+	margin-top: 1em;
+}
+
+#trees-list > li > heading {
+	color: #bbb;
+}
+
+#trees-list > li {
+	margin-left: 0;
+	margin-bottom: 0.5em;
+}
+
+#trees-list > li:last-child {
+	margin-bottom: 0;
+}
+
+#trees-list .subtree-link {
+	display: inline-block;
+	text-decoration: underline;
+	cursor: pointer;
+	width: 13em;
+}
+
+#trees-list .subtree-link:hover {
+	color: #fca64d;
+}
+
+#trees-list .points:before {
+	content: "(";
+}
+
+#trees-list .points:after {
+	content: ")";
+}
+
+.subtree-info.active * {
+	font-weight: bold;
+	color: #fc901d;
+}
+
