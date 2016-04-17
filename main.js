@@ -1,5 +1,5 @@
 // The main script that does the heavy lifting.
-// Don't judge this code too harshly. I threw it all togeather in a few hours.
+// Don't judge this code too harshly. I threw it all together in a few hours.
 // - Jacob Fischer
 
 var payday = {
@@ -13,6 +13,21 @@ var skillPointsPerTier = [
     18,
     9999,
 ];
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
 
 function forEachSubtree(callback) {
     for(var i = 0; i < payday.trees.length; i++) {
@@ -60,9 +75,39 @@ function updateHTML() {
             .html("Requires Infamy");
     }
 
+    var subtreesForName = [];
     forEachSubtree(function(subtree) {
         $(".subtree-" + subtree.number + "-points").html(subtree.points);
+        subtreesForName.push(subtree);
     });
+
+    // create build name
+    subtreesForName.sort(function(a, b) {
+        if(a.points !== b.points) {
+            return b.points - a.points;
+        }
+
+        return a.number - b.number;
+    });
+
+    while(true) {
+        var last = subtreesForName[subtreesForName.length - 1];
+
+        if(last && last.points === 0) {
+            subtreesForName.pop();
+        }
+        else {
+            break;
+        }
+    }
+
+    var count = Math.min(subtreesForName.length, 3); // at most 3 elements to make the name
+    var generatedName = [];
+    for(var i = 0; i < count; i++) {
+        generatedName.unshift(subtreesForName[i][i === 0 ? "noun" : "adjective"])
+    }
+    payday.generatedName = generatedName.length === 0 ? "New Build" : generatedName.join(" ");
+    payday.$buildName.val(getUrlParameter("name") || payday.generatedName);
 
     forEachSubtree(function(subtree) {
         for(var i = 0; i < subtree.tiers.length; i++) {
@@ -271,6 +316,18 @@ function initHTML() {
     payday.$pointsMessage = $("#points-message");
     payday.$buildOverview = $("#build-overview");
     payday.$buildOverviewTable = $("table", payday.$buildOverview);
+    payday.$buildName = $("#build-name").on("change", function() {
+        var newVal = payday.$buildName.val();
+        if(newVal && newVal !== payday.generatedName) {
+            queryString.set("name", newVal);
+        }
+        else {
+            if(!newVal || getUrlParameter("name")) {
+                queryString.remove("name");
+                payday.$buildName.val(payday.generatedName);
+            }
+        }
+    });
     payday.$buildOverviewLink = $("#build-overview-link").on("click", function() {
         setSubtree(null);
     });
@@ -296,6 +353,9 @@ function initHTML() {
     var $trees = {};
     var $overviewTrees = {};
     forEachSubtree(function(subtree, tree) {
+        subtree.adjective = subtree.adjective || subtree.title;
+        subtree.noun = subtree.noun || subtree.title;
+
         // Build the overview table
         var $overviewRow = $("<tr>")
             .appendTo(payday.$buildOverviewTable)

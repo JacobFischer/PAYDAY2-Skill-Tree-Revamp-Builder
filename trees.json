@@ -4,6 +4,7 @@
         "trees": [
             {
                 "title": "Medic",
+                "adjective": "Medical",
                 "tiers": [
                     [
                         {
@@ -47,6 +48,7 @@
             },
             {
                 "title": "Controller",
+                "adjective": "Controlling",
                 "tiers": [
                     [
                         {
@@ -90,6 +92,7 @@
             },
             {
                 "title": "Sharpshooter",
+                "adjective": "Sharpshooting",
                 "tiers": [
                     [
                         {
@@ -139,6 +142,7 @@
         "trees": [
             {
                 "title": "Shotgunner",
+                "adjective": "Shotgunning",
                 "tiers": [
                     [
                         {
@@ -182,6 +186,7 @@
             },
             {
                 "title": "Armorer",
+                "adjective": "Armored",
                 "tiers": [
                     [
                         {
@@ -225,6 +230,7 @@
             },
             {
                 "title": "Ammunition Specialist",
+                "adjective": "Loaded",
                 "tiers": [
                     [
                         {
@@ -274,6 +280,7 @@
         "trees": [
             {
                 "title": "Engineer",
+                "adjective": "Engineering",
                 "tiers": [
                     [
                         {
@@ -317,6 +324,7 @@
             },
             {
                 "title": "Breacher",
+                "adjective": "Breaching",
                 "tiers": [
                     [
                         {
@@ -360,6 +368,7 @@
             },
             {
                 "title": "Oppressor",
+                "adjective": "Automatic",
                 "tiers": [
                     [
                         {
@@ -409,6 +418,8 @@
         "trees": [
             {
                 "title": "Covert Ops",
+                "adjective": "Covert",
+                "noun": "Covert Op",
                 "tiers": [
                     [
                         {
@@ -452,6 +463,7 @@
             },
             {
                 "title": "Commando",
+                "adjective": "Dodging",
                 "tiers": [
                     [
                         {
@@ -495,6 +507,7 @@
             },
             {
                 "title": "Silent Killer",
+                "adjective": "Silent",
                 "tiers": [
                     [
                         {
@@ -544,6 +557,7 @@
         "trees": [
             {
                 "title": "Gunslinger",
+                "adjective": "Gunslinging",
                 "tiers": [
                     [
                         {
@@ -587,6 +601,8 @@
             },
             {
                 "title": "Relentless",
+                "adjective": "Relentless",
+                "noun": "Messiah",
                 "tiers": [
                     [
                         {
@@ -630,6 +646,7 @@
             },
             {
                 "title": "Brawler",
+                "adjective": "Brawling",
                 "tiers": [
                     [
                         {

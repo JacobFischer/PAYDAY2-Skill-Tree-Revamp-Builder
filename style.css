@@ -71,6 +71,21 @@ a {
 	margin: 0 auto;
 }
 
+#build-name-wrapper {
+	text-align: center;
+}
+
+input#build-name {
+	font-size: 3em;
+	line-height: 1em;
+	margin: 0.5em 0;
+	padding: 0.5em;
+	background: none !important;
+	border: none !important;
+	display: inline;
+}
+
+
 /*** Build Overview ***/
 
 .overview-tree-title > div {
@@ -164,9 +179,11 @@ td.overview-tree-title {
 }
 
 h1,
-#current-subtree > heading {
+#current-subtree > heading,
+#build-name {
 	font-weight: bold;
 	font-size: 2em;
+	line-height: 2em;
 	text-align: center;
 	width: 100%;
 	display: block;
@@ -178,9 +195,11 @@ h1,
 		1px 1px 0 #000;
 }
 
-h1 {
-	font-size: 3em;
-	line-height: 3em;
+h1#site-title {
+	font-size: 1.25em;
+	color: #bbb;
+	line-height: 1em;
+	margin-top: 1em;
 	text-align: center;
 	padding: 0 0.25em;
 }
