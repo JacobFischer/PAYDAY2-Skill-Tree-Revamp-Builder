@@ -61,24 +61,32 @@ function updateHTML() {
     }
 
     forEachSubtree(function(subtree) {
-        $("#" + subtree.number + "-points").html(subtree.points);
+        $(".subtree-" + subtree.number + "-points").html(subtree.points);
     });
 
-    var subtree = payday.currentSubtree;
-    for(var i = 0; i < subtree.tiers.length; i++) {
-        var tier = subtree.tiers[i];
-        for(var j = 0; j < tier.length; j++) {
-            var skill = tier[j];
+    forEachSubtree(function(subtree) {
+        for(var i = 0; i < subtree.tiers.length; i++) {
+            var tier = subtree.tiers[i];
+            for(var j = 0; j < tier.length; j++) {
+                var skill = tier[j];
 
-            skill.$skill.toggleClass("availible", Boolean(skill.availible));
+                var $skill = $(".skill-" + skill.number)
+                    .toggleClass("availible", Boolean(skill.availible))
+                    .removeClass("taken-basic taken-aced");
 
-            skill.$basic.toggleClass("taken", Boolean(skill.taken));
-            skill.$aced
-                .toggleClass("taken", skill.taken === "aced")
-                .toggleClass("basic-needed", skill.availible && !skill.taken);
+                if(skill.taken) {
+                    $skill.addClass("taken-" + skill.taken);
+                }
 
+                if(payday.currentSubtree === subtree) {
+                    skill.$basic.toggleClass("taken", Boolean(skill.taken));
+                    skill.$aced
+                        .toggleClass("taken", skill.taken === "aced")
+                        .toggleClass("basic-needed", skill.availible && !skill.taken);
+                }
+            }
         }
-    }
+    });
 };
 
 function updateURL() {
@@ -145,16 +153,16 @@ function calculatePoints() {
 };
 
 function buildTable() {
-    var subtree = payday.currentSubtree
+    var subtree = payday.currentSubtree;
 
-    payday.$tree
+    payday.$currentSubtree
         .html("")
         .append($("<heading>" + subtree.title + "</heading>"));
 
     payday.$points = $("#points");
 
     var $table = $("<table>")
-        .appendTo(payday.$tree);
+        .appendTo(payday.$currentSubtree);
 
     var maxSkillsInTier = 0;
     for(var i = 0; i < subtree.tiers.length; i++) {
@@ -186,8 +194,7 @@ function buildTable() {
 
             var $skill = $("<div>")
                 .appendTo($td)
-                .attr("id", "skill-" + t + "-" + s)
-                .addClass("skill")
+                .addClass("skill skill-" + skill.number)
                 .append($("<heading>")
                     .html(skill.title)
                 );
@@ -243,19 +250,57 @@ function setSubtree(subtree) {
     payday.currentSubtree = subtree;
 
     $(".subtree-info").removeClass("active");
-    $("#subtree-info-" + subtree.number).addClass("active");
+    payday.$buildOverviewLink.toggleClass("active", !subtree);
 
-    buildTable();
+    if(subtree) {
+        $("#subtree-info-" + subtree.number).addClass("active");
+
+        buildTable();
+    }
+
     calculatePoints();
+
+    payday.$currentSubtree.toggleClass("hidden", !subtree);
+    payday.$buildOverview.toggleClass("hidden", !!subtree);
 };
 
 function initHTML() {
+    payday.$currentSubtree = $("#current-subtree");
     payday.$treesList = $("#trees-list");
     payday.$points = $("#points");
     payday.$pointsMessage = $("#points-message");
+    payday.$buildOverview = $("#build-overview");
+    payday.$buildOverviewTable = $("table", payday.$buildOverview);
+    payday.$buildOverviewLink = $("#build-overview-link").on("click", function() {
+        setSubtree(null);
+    });
+
+
+    var $overviewTR = $("<tr>")
+        .appendTo(payday.$buildOverviewTable)
+        .append($("<th>")
+            .html("Tree")
+            .addClass("overview-tree-heading")
+        )
+        .append($("<th>").html("Subtree"))
+
+    for(var i = 0; i < payday.numberOfTiers; i++) {
+        $overviewTR.append($("<th>")
+            .html("Tier "+ (i+1))
+            .addClass("overview-tier-heading")
+        );
+    }
+
+    $overviewTR.append("Points");
 
     var $trees = {};
+    var $overviewTrees = {};
     forEachSubtree(function(subtree, tree) {
+        // Build the overview table
+        var $overviewRow = $("<tr>")
+            .appendTo(payday.$buildOverviewTable)
+            .attr("id", "overview-subtree-" + subtree.number);
+
         if(!$trees[tree.title]) {
             var $treeDiv = $("<li>")
                 .append($("<heading>" + tree.title + "</heading>"))
@@ -263,8 +308,63 @@ function initHTML() {
 
             $trees[tree.title] = $("<ul>")
                 .appendTo($treeDiv);
+
+            $overviewRow
+                .addClass("new-tree")
+                .append($("<td>")
+                    .attr("rowspan", tree.trees.length)
+                    .addClass("overview-tree-title")
+                    .append($("<div>").html(tree.title))
+                );
+        }
+        $overviewRow.append($("<td>")
+            .html(subtree.title)
+            .addClass("overview-subtree-title")
+            .on("click", function() {
+                setSubtree(subtree);
+            })
+        );
+
+        for(var i = 0; i < subtree.tiers.length; i++) {
+            var tier = subtree.tiers[i];
+            var $overviewTier = $("<td>")
+                .appendTo($overviewRow)
+                .attr("id", "overview-tier-" + subtree.number + "-" + tier.number);
+
+            for(var j = 0; j < tier.length; j++) {
+                var skill = tier[j];
+                var $overviewSkill = $("<div>")
+                    .appendTo($overviewTier)
+                    .addClass("skill skill-" + skill.number)
+                    .attr("title", "Basic:\n • "+ skill.basic + "\n———\nAced:\n • " + skill.aced)
+                    .html(skill.title);
+
+                (function(skill, $overviewSkill) {
+                    $overviewSkill.on("click", function() {
+                        if(skill.availible) {
+                            if(!skill.taken) {
+                                skill.taken = "basic";
+                            }
+                            else if(skill.taken === "basic") {
+                                skill.taken = "aced";
+                            }
+                            else {
+                                skill.taken = false;
+                            }
+
+                            calculatePoints();
+                        }
+                    });
+                })(skill, $overviewSkill);
+            }
         }
 
+         $overviewRow.append($("<td>")
+            .addClass("subtree-points subtree-" + subtree.number + "-points")
+            .html(0)
+        );
+
+        // Build the info pane
         $treeUL = $trees[tree.title];
 
         var $li = $("<li>")
@@ -275,8 +375,7 @@ function initHTML() {
                 .html(subtree.title)
             )
             .append($("<span>")
-                .attr("id", subtree.number+ "-points")
-                .addClass("points")
+                .addClass("points subtree-" + subtree.number + "-points")
                 .html("0")
             )
             .on("click", function(event) {
@@ -285,7 +384,7 @@ function initHTML() {
             });
 
         $treeUL.append($li);
-    })
+    });
 };
 
 function updateFromURL() {
@@ -305,6 +404,8 @@ function init() {
     var $trees = $("#trees");
 
     var subtrees = 0;
+    payday.subtrees = [];
+    payday.numberOfTiers = 0;
     for(var i = 0; i < payday.trees.length; i++) {
         var tree = payday.trees[i];
         tree.number = i;
@@ -313,6 +414,8 @@ function init() {
             var subtree = tree.trees[j];
             subtree.number = subtrees;
             subtrees++;
+            payday.subtrees.push(subtree);
+            payday.numberOfTiers = Math.max(payday.numberOfTiers, subtree.tiers.length);
 
             for(var t = subtree.tiers.length-1; t >= 0; t--) {
                 subtree.tiers[t].number = t;
@@ -333,9 +436,7 @@ function init() {
 
     initHTML();
 
-    payday.$tree = $("#current-subtree");
-
-    setSubtree(payday.trees[0].trees[0]);
+    setSubtree(null);
 
     window.onpopstate = function() {
         updateFromURL();

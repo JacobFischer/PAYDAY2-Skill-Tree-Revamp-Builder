@@ -15,11 +15,24 @@
 
 html {
 	background: black url("bg.jpg") top left;
-	background-size:cover;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 ul > li {
 	margin-left: 2em;
+}
+
+th {
+	text-align: left;
+}
+
+th, td {
+	vertical-align: middle;
+}
+
+a {
+	text-decoration: underline;
 }
 
 .warning {
@@ -30,25 +43,123 @@ ul > li {
 	color: red;
 }
 
+.hidden {
+	display: none;
+}
+
 /*** Main ***/
 
+#main > footer a {
+	color: #ddd;
+}
+
+#main > footer a:hover {
+	color: #fff;
+}
+
 #main > footer {
+	color: #ddd;
 	clear: both;
-	text-align: center;
+	text-align: right;
 	padding: 0 1em;
 	font-weight: bold;
+	margin-top: 3em
 }
 
 #builder {
-	width: 74em;
+	width: 84em;
 	margin: 0 auto;
+}
+
+/*** Build Overview ***/
+
+.overview-tree-title > div {
+	-moz-transform: rotate(-90.0deg);
+	-o-transform: rotate(-90.0deg);
+	-webkit-transform: rotate(-90.0deg);
+	filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=0.083);
+	-ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)";
+	transform: rotate(-90.0deg);
+}
+
+td.overview-tree-title {
+	width: 1em;
+}
+
+#build-overview table {
+	width: 100%;
+}
+
+#build-overview table td,
+#build-overview table th {
+	padding: 0.375em 0;
+}
+
+#build-overview .overview-tree-heading {
+	text-align: center;
+}
+
+#build-overview .overview-tier-heading {
+	padding-left: 1em;
+}
+
+.skill {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;/
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#build-overview .skill {
+	margin: 0.5em 0.5em;
+	padding: 0.25em 0.5em;
+}
+
+#build-overview .skill.availible {
+	cursor: pointer;
+}
+
+#build-overview .skill.taken-basic,
+#build-overview .skill.taken-aced {
+	background: #3885AB;
+}
+
+#build-overview .skill.taken-aced {
+	color: #fc901d;
+}
+
+#build-overview tr.new-tree {
+	border-top: 3px #fff solid;
+}
+
+#build-overview tr:not(.new-tree) td {
+	border-top: 1px #ddd solid;
+}
+
+#build-overview tr.new-tree td {
+	padding-top: 0.5em;
+}
+
+#build-overview .overview-subtree-title {
+	width: 6em;
+	font-style: italic;
+	text-decoration: underline;
+	color: #ddd;
+	cursor: pointer;
+}
+
+#build-overview .subtree-points {
+	text-align: center;
 }
 
 /*** Skill Tree ***/
 
-#current-subtree {
+#current-subtree,
+#build-overview {
 	float: left;
-	width: 50em;
+	width: 60em;
 	padding-left: 1.5em;
 }
 
@@ -78,87 +189,89 @@ h1 {
 	margin: 0 auto;
 }
 
-.tree heading {
+#current-subtree .tree heading {
 	font-weight: bold;
 }
 
-.tree > heading {
+#current-subtree .tree > heading {
 	display: block;
 	font-size: 2em;
 }
 
-.subtree {
+#current-subtree .subtree {
 	display: table;
 	width: 40em;
 }
 
-.tier {
+#current-subtree .tier {
 	display: table-row;
 }
 
-.skill {
+#current-subtree .skill {
 	display: table-cell;
 	width: 19em;
 	padding: 0.5em;
 	margin: 0 auto;
+}
 
+.skill:not(.availible) {
 	opacity: 0.666;
 }
 
-.skill.availible,
-.skill.taken {
+#current-subtree .skill.availible,
+#current-subtree .skill.taken {
 	opacity: 1;
 	cursor: pointer;
 }
 
-.tier-number {
+#current-subtree .tier-number {
 	font-weight: bold;
 	padding-right: 2em;
 	vertical-align: middle;
 }
 
-.skill:first-child:last-child {
+#current-subtree .skill:first-child:last-child {
 	font-weight: normal;
 	display: block;
 }
 
-.basic,
-.aced {
+#current-subtree .basic,
+#current-subtree .aced {
 	padding: 0.5em;
 	border: 0.125em solid #bbb;
 	color: #bbb;
 	overflow-y: hidden;
 }
 
-.basic.taken,
-.aced.taken {
+#current-subtree .basic.taken,
+#current-subtree .aced.taken {
 	border-color: #fc901d;
 	color: #fff;
 }
 
-.availible > .aced.basic-needed {
+#current-subtree .availible > .aced.basic-needed {
 	opacity: 0.666;
 	cursor: auto;
 }
 
-.basic > .description,
-.aced > .description {
+#current-subtree .basic > .description,
+#current-subtree .aced > .description {
 	height: 5em;
 }
 
-.skill > heading {
+#current-subtree .skill > heading {
 	font-weight: bold;
 }
 
-.skill > .basic {
+#current-subtree .skill > .basic {
 	background-color: #2C536D;
 }
 
-.skill > .aced {
+#current-subtree .skill > .aced {
 	background-color: #3885AB;
 }
 
-.skill .cost {
+#current-subtree .skill .cost {
 	text-align: right;
 	font-weight: bold
 }
@@ -199,6 +312,11 @@ h1 {
 	margin-bottom: 0;
 }
 
+#build-overview-link {
+	margin-bottom: 0.25em
+}
+
+#build-overview-link,
 #trees-list .subtree-link {
 	display: inline-block;
 	text-decoration: underline;
@@ -218,8 +336,8 @@ h1 {
 	content: ")";
 }
 
-.subtree-info.active * {
-	font-weight: bold;
+.subtree-info.active *,
+#build-overview-link.active {
 	color: #fc901d;
 }
 
