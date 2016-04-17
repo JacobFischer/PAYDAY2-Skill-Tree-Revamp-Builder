@@ -1,4 +1,4 @@
-[
+var PAYDAY_TREES = [
     {
         "title": "Mastermind",
         "trees": [
@@ -690,4 +690,4 @@
             }
         ]
     }
-]
+];

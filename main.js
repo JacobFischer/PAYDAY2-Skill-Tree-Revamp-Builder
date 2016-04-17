@@ -509,18 +509,8 @@ function init() {
     };
 };
 
-// get the tree data from the json file
-$.ajax({
-    dataType: "json",
-    url: "trees.json",
-    success: function(data) {
-        payday.trees = data;
+payday.trees = PAYDAY_TREES; // from tree.js
 
-        $(document).ready(function() {
-            init();
-        });
-    },
-    error: function(data) {
-        console.error(data);
-    }
+$(document).ready(function() {
+    init();
 });
