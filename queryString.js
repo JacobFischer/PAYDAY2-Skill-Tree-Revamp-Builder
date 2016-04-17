@@ -86,6 +86,15 @@
         return queryString.parse(location.search);
     };
 
+    queryString.clear = function() {
+        var params = queryString.getAll();
+        for(var key in params) {
+            params[key] = undefined;
+        }
+
+        queryString.setAll(params);
+    };
+
     queryString.set = function (key, new_value) {
         var params = queryString.parse(location.search);
         if(params[key] === new_value) {

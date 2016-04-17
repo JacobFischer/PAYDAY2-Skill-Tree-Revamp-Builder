@@ -331,6 +331,11 @@ function initHTML() {
     payday.$buildOverviewLink = $("#build-overview-link").on("click", function() {
         setSubtree(null);
     });
+    payday.$resetBuild = $("#reset-build").on("click", function() {
+        queryString.clear();
+        updateFromURL();
+        calculatePoints();
+    });
 
 
     var $overviewTR = $("<tr>")

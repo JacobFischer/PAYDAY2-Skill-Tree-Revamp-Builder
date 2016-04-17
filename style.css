@@ -301,7 +301,7 @@ h1#site-title {
 #info-pane {
 	float: left;
 	width: 17.5em;
-	background: #2C536D;
+	background: rgba(44, 83, 109, 0.925);
 	padding: 1em;
 	border: 0.125em #bbb solid;
 }
@@ -336,14 +336,18 @@ h1#site-title {
 }
 
 #build-overview-link,
-#trees-list .subtree-link {
+#trees-list .subtree-link,
+#reset-build {
 	display: inline-block;
 	text-decoration: underline;
 	cursor: pointer;
 	width: 13em;
 }
 
-#trees-list .subtree-link:hover {
+#build-overview-link:hover,
+#build-overview-link.active:hover
+#trees-list .subtree-link:hover,
+#reset-build:hover {
 	color: #fca64d;
 }
 
@@ -358,5 +362,9 @@ h1#site-title {
 .subtree-info.active *,
 #build-overview-link.active {
 	color: #fc901d;
+}
+
+#reset-build {
+	font-size: 0.75em;
 }
 
