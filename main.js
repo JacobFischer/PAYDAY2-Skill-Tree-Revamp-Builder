@@ -29,6 +29,25 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
+function romanize(num) {
+    if (!+num) {
+        return false;
+    }
+
+    var digits = String(+num).split(""),
+        key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
+               "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+               "","I","II","III","IV","V","VI","VII","VIII","IX"],
+        roman = "",
+        i = 3;
+
+    while (i--) {
+        roman = (key[+digits.pop() + (i * 10)] || "") + roman;
+    }
+
+    return Array(+digits.join("") + 1).join("M") + roman;
+};
+
 function forEachSubtree(callback) {
     for(var i = 0; i < payday.trees.length; i++) {
         var tree = payday.trees[i];
@@ -55,24 +74,27 @@ function forEachSkill(callback) {
 };
 
 function updateHTML() {
+    var remaining = 104 - payday.points;
     payday.$points
         .toggleClass("maxed", payday.points >= 100)
-        .html(payday.points);
+        .html(payday.points)
+        .attr("title", "" + remaining + " point" + (remaining === 1 ? "" : "s") + " remaining");
 
     payday.$pointsMessage
         .removeClass("error warning")
         .html("");
 
-
     if(payday.points >= 105) {
         payday.$pointsMessage
             .addClass("error")
-            .html("Invalid!");
+            .html("Invalid!")
+            .attr("title", "You have allocated to many points. This build will not be possible in game.");
     }
     else if(payday.points > 100 && payday.points < 105) {
         payday.$pointsMessage
             .addClass("warning")
-            .html("Requires Infamy");
+            .html("Requires Infamy " + romanize(payday.points - 99)) // 100 - 1 = 99, -1 because... (below)
+            .attr("title", "The Mastermind, Enforcer, Technician, and Ghost infamy masts availible during infamy levels II-V each grant an additional point.");
     }
 
     var subtreesForName = [];
