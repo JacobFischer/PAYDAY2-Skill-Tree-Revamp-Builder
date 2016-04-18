@@ -58,20 +58,23 @@ a {
 /*** Main ***/
 
 #main > footer a {
-	color: #ddd;
+	color: #bbb;
 }
 
 #main > footer a:hover {
-	color: #fff;
+	color: #3885AB;
 }
 
 #main > footer {
-	color: #ddd;
+	color: #bbb;
 	clear: both;
 	text-align: right;
-	padding: 0 1em;
 	font-weight: bold;
 	margin-top: 3em
+}
+
+#main > footer #by-line {
+	margin-right: 1em;
 }
 
 #builder {
@@ -87,7 +90,7 @@ input#build-name {
 	font-size: 3em;
 	line-height: 1em;
 	margin: 0.5em 0;
-	padding: 0.5em;
+	padding: 0.5em 0;
 	background: none !important;
 	border: none !important;
 	display: inline;
@@ -204,7 +207,6 @@ h1#site-title {
 	line-height: 1em;
 	margin-top: 1em;
 	text-align: center;
-	padding: 0 0.25em;
 }
 
 #current-subtree > table {
