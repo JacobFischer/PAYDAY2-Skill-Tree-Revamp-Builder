@@ -19,6 +19,14 @@ html {
 	background-attachment: fixed;
 }
 
+* {
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
 ul > li {
 	margin-left: 2em;
 }
@@ -187,13 +195,8 @@ h1,
 	text-align: center;
 	width: 100%;
 	display: block;
-
-	text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
 }
+
 
 h1#site-title {
 	font-size: 1.25em;
