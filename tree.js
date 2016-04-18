@@ -354,7 +354,7 @@ var PAYDAY_TREES = [
                         {
                             "title": "Kick Starter",
                             "basic": "Your drills and saws gain an additional 20% chance to automatically restart after breaking.",
-                            "aced": "You gain the ability to restart a drill by hitting it with a melee attack. You get 1 chance for each time it breaks with a 50% chance rate."
+                            "aced": "You gain the ability to restart a drill by hitting it with a melee attack. You get 1 chance for each time it breaks with a 50% success rate."
                         }
                     ],
                     [
