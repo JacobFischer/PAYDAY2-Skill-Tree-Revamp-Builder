@@ -240,6 +240,7 @@ h1#site-title {
 
 .skill:not(.availible) {
 	opacity: 0.666;
+	cursor: not-allowed;
 }
 
 #current-subtree .skill.availible,
@@ -300,6 +301,9 @@ h1#site-title {
 	font-weight: bold
 }
 
+#current-subtree td.tier-number {
+	text-align: center;
+}
 
 /*** Info Pane ***/
 

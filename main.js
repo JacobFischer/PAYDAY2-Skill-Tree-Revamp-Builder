@@ -100,6 +100,13 @@ function updateHTML() {
     var subtreesForName = [];
     forEachSubtree(function(subtree) {
         $(".subtree-" + subtree.number + "-points").html(subtree.points);
+        for(var tier = 1; tier < skillPointsPerTier.length; tier++) {
+            var tierPoints = skillPointsPerTier[tier];
+            if(subtree.points < tierPoints && subtree.points >= skillPointsPerTier[tier-1]) {
+                 $(".subtree-" + subtree.number + "-tier-points").html(tierPoints);
+                 break;
+            }
+        }
         subtreesForName.push(subtree);
     });
 
@@ -244,7 +251,7 @@ function buildTable() {
             .addClass("tier")
             .append($("<td>")
                 .addClass("tier-number")
-                .html(t+1)
+                .html("Tier " + (t+1) +"<br/>(" + skillPointsPerTier[t] + " points)")
             );
 
         var m = maxSkillsInTier;
@@ -370,12 +377,12 @@ function initHTML() {
 
     for(var i = 0; i < payday.numberOfTiers; i++) {
         $overviewTR.append($("<th>")
-            .html("Tier "+ (i+1))
+            .html("Tier " + (i+1) +" (" + skillPointsPerTier[i] + " points)")
             .addClass("overview-tier-heading")
         );
     }
 
-    $overviewTR.append("Points");
+    $overviewTR.append("<th>Points</th>");
 
     var $trees = {};
     var $overviewTrees = {};
@@ -423,7 +430,7 @@ function initHTML() {
                 var $overviewSkill = $("<div>")
                     .appendTo($overviewTier)
                     .addClass("skill skill-" + skill.number)
-                    .attr("title", "Basic:\n • "+ skill.basic + "\n———\nAced:\n • " + skill.aced)
+                    .attr("title", "Basic (" + (i+1) + " point" + (i === 0 ? "" : "s") + "):\n • "+ skill.basic + "\n———\nAced (" + (i+3) + " points):\n • " + skill.aced)
                     .html(skill.title);
 
                 (function(skill, $overviewSkill) {
@@ -447,8 +454,9 @@ function initHTML() {
         }
 
          $overviewRow.append($("<td>")
-            .addClass("subtree-points subtree-" + subtree.number + "-points")
-            .html(0)
+            .addClass("subtree-points")
+            .addClass("subtree-" + subtree.number + "-points")
+            .html("0")
         );
 
         // Build the info pane
