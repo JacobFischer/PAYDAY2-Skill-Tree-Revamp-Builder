@@ -260,6 +260,11 @@ h1#site-title {
 	display: block;
 }
 
+#current-subtree .skill heading {
+	display: block;
+	text-align: center;
+}
+
 #current-subtree .basic,
 #current-subtree .aced {
 	padding: 0.5em;
