@@ -8,8 +8,8 @@ var payday = {
 
 var skillPointsPerTier = [
     0,
-    4,
-    10,
+    1,
+    3,
     18,
     9999,
 ];
@@ -46,6 +46,10 @@ function romanize(num) {
     }
 
     return Array(+digits.join("") + 1).join("M") + roman;
+};
+
+function plural(num) {
+    return (Math.abs(num) === 1) ? "" : "s";
 };
 
 function forEachSubtree(callback) {
@@ -245,13 +249,14 @@ function buildTable() {
 
     for(var t = subtree.tiers.length-1; t >= 0; t--) { // reverse order so we start at the top skill and go down for html elements
         var tier = subtree.tiers[t];
+        var pts = skillPointsPerTier[t];
         var $tr = $("<tr>")
             .appendTo($table)
             .attr("id", "tier-" + t)
             .addClass("tier")
             .append($("<td>")
                 .addClass("tier-number")
-                .html("Tier " + (t+1) +"<br/>(" + skillPointsPerTier[t] + " points)")
+                .html("Tier " + (t+1) +"<br/>(" + pts + " point" + plural(pts) + ")")
             );
 
         var m = maxSkillsInTier;
@@ -376,8 +381,9 @@ function initHTML() {
         .append($("<th>").html("Subtree"))
 
     for(var i = 0; i < payday.numberOfTiers; i++) {
+        var pts = skillPointsPerTier[i];
         $overviewTR.append($("<th>")
-            .html("Tier " + (i+1) +" (" + skillPointsPerTier[i] + " points)")
+            .html("Tier " + (i+1) +" (" + pts + " point" + plural(pts) + ")")
             .addClass("overview-tier-heading")
         );
     }

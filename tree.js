@@ -52,16 +52,16 @@ var PAYDAY_TREES = [
                 "tiers": [
                     [
                         {
-                            "title": "Cable Guy",
-                            "basic": "You can cable tie hostages 75% faster.",
-                            "aced": "Increases your supply of cable ties by 4."
+                            "title": "Endurance",
+                            "basic": "Increases your supply of cable ties by 4. You can cable tie hostages 75% faster.",
+                            "aced": "Increases your stamina by 150% and your crew's stamina by 50%. Civilians are intimidated by the noise you make and remain intimidated 50% longer."
                         }
                     ],
                     [
                         {
-                            "title": "Endurance",
-                            "basic": "Increases your stamina by 150% and your crew's stamina by 50%. Civilians are intimidated by the noise you make and remain intimidated 50% longer.",
-                            "aced": "You can reload your weapon while sprinting."
+                            "title": "Cable Guy",
+                            "basic": "The power and range of your intimidation is increased by 50%.",
+                            "aced": "You can now have 2 converted enemies at the same time."
                         },
                         {
                             "title": "Joker",
@@ -72,8 +72,8 @@ var PAYDAY_TREES = [
                     [
                         {
                             "title": "Stockholm Syndrome",
-                            "basic": "Nearby untied civilians will revive you when you call on them. Your hostages will not flee when they have been rescued by law enforcers.",
-                            "aced": "Civilians reviving you have an X% chance of giving you ammo. Whenever you get into custody, your hostages will trade themselves for your safe return. This effect can occur during assaults."
+                            "basic": "Civilians are intimidated by the noise you make and remain intimidated 50% longer.",
+                            "aced": "Your hostages will not flee when they have been rescued by law enforcers. Whenever you get into custody, your hostages will trade themselves for your safe return. This effect can occur during assaults, but only 1 time."
                         },
                         {
                             "title": "Partner in Crime",
@@ -117,7 +117,7 @@ var PAYDAY_TREES = [
                         {
                             "title": "Spotter",
                             "basic": "Enemies you mark take 15% more damage.",
-                            "aced": "Enemies you mark take an additional X% damage when further than Y meters."
+                            "aced": "Enemies you mark take an additional 50% damage when further than 25 meters."
                         },
                         {
                             "title": "Aggressive Reload",
@@ -198,31 +198,31 @@ var PAYDAY_TREES = [
                     [
                         {
                             "title": "Die Hard",
-                            "basic": "You can use your primary weapon in bleedout.",
-                            "aced": "Your armor recovers 15% faster."
+                            "basic": "You take 50% less damage while interacting with objects.",
+                            "aced": "Increases the armor of all Ballistic vests by 20."
                         },
                         {
                             "title": "Transporter",
                             "basic": "You can throw bags 50% further.",
-                            "aced": "You can now carry 2 bags at once."
+                            "aced": "For each 10 armor points the bag movement penalty is reduced by 1%."
                         }
                     ],
                     [
                         {
                             "title": "Bulletproof",
                             "basic": "The recovery rate of you and your crew is increased by 25%.",
-                            "aced": "Improves your armor so you can absorb 35% more damage."
+                            "aced": "When you melee or shoot shield enemies there's a chance that they get knocked over by the sheer force. The chance depends on the damage of the used weapon."
                         },
                         {
                             "title": "Bullseye",
                             "basic": "You regenerate 10 armor for each successful headshot. This effect cannot occur more than once every 2 seconds.",
-                            "aced": "You regenerate an additional 20 armor for each successful headshot."
+                            "aced": "You regenerate an additional 25 (35 total) armor for each successful headshot."
                         }
                     ],
                     [
                         {
                             "title": "Iron Man",
-                            "basic": "When you melee or shoot shield enemies there's a chance that they get knocked over by the sheer force. The chance depends on the damage of the weapon used.",
+                            "basic": "	Improves your armor so you can absorb 40% more damage.",
                             "aced": "You gain the ability to wear the Improved Combined Tactical Vest."
                         }
                     ]
@@ -234,15 +234,15 @@ var PAYDAY_TREES = [
                 "tiers": [
                     [
                         {
-                            "title": "Stable Shot",
+                            "title": "Scavenging",
                             "basic": "You gain a 50% increased ammo box pick up range.",
-                            "aced": "Every 10th enemy you kill will drop an extra ammo box."
+                            "aced": "Every 6th enemy you kill will drop an extra ammo box."
                         }
                     ],
                     [
                         {
                             "title": "Bullet Storm",
-                            "basic": "Directly after you deploy an ammo bag, you can fire your weapon for 0 seconds without depleting any ammunition.",
+                            "basic": "Directly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting any ammunition.",
                             "aced": "You can fire for 15 seconds longer without depleting your ammunition."
                         },
                         {
@@ -253,14 +253,14 @@ var PAYDAY_TREES = [
                     ],
                     [
                         {
-                            "title": "Ammunition Specialist",
+                            "title": "Extra Lead",
                             "basic": "You can now place 2 ammo bags instead of just one.",
                             "aced": "Each ammo bag contains additional 200% ammunition."
                         },
                         {
                             "title": "Carbon Blade",
                             "basic": "You replace your saw blades with carbon blades, increasing your saw efficiency by 40% and reducing the wear down of the blades on enemies by 50%.",
-                            "aced": "You can now saw through shield enemies with your OVE9000 portable saw. When killing an enemy with the saw, you have a X% chance to cause nearby enemies to panic. Panic will makes enemies go into short bursts of uncontrollable fear."
+                            "aced": "You can now saw through shield enemies with your OVE9000 portable saw. When killing an enemy with the saw, you have a 50% chance to cause enemies in a 10m radis to panic. Panic will makes enemies go into short bursts of uncontrollable fear."
                         }
                     ],
                     [
@@ -380,12 +380,12 @@ var PAYDAY_TREES = [
                     [
                         {
                             "title": "Heavy Impact",
-                            "basic": "Your shots have a 25% chance to knock down enemies.",
-                            "aced": "Your shots now have a 50% chance to knock down enemies."
+                            "basic": "Your shots have a 20% chance to knock down enemies.",
+                            "aced": "Your shots now have a 60% chance to knock down enemies."
                         },
                         {
                             "title": "Fire Control",
-                            "basic": "You gain 8 weapon stability.",
+                            "basic": "You gain 12 weapon accuracy while firing from the hip.",
                             "aced": "You gain 12 weapon accuracy while firing from the hip."
                         }
                     ],
@@ -393,7 +393,7 @@ var PAYDAY_TREES = [
                         {
                             "title": "Shock and Awe",
                             "basic": "You can now hip-fire with your weapons while sprinting.",
-                            "aced": "Killing X enemies with SMG, LMG, and rifles fired in automatic mode will reduce your next reload time by up to 60%. This bonus is reduced by 1% for each bullet above 20 in total magazine size, down to a minimum of 20% reload time reduction."
+                            "aced": "Killing 2 enemies with Submachine Guns, Light Machineguns or Rifles set on automatic fore mode will reduce your next reload time by up to 60%. This bonus is reduced by 1% for each bullet above 20 in the total magazine size, down to a minimum of 20% reload time reduction."
                         },
                         {
                             "title": "Fast Fire",
@@ -404,8 +404,8 @@ var PAYDAY_TREES = [
                     [
                         {
                             "title": "Body Expertise",
-                            "basic": "15% of the enemy's headshot multiplier is applied to the enemy's body with SMG, LMG, and rifles fired in automatic mode.",
-                            "aced": "50% of the enemy's headshot multiplier is applied to the enemy's body with SMG, LMG, and rifles fired in automatic mode."
+                            "basic": "18.75% of the enemy's headshot multiplier is applied to the enemy's body. This skill is only activated by Submachine Guns, Light Machineguns or Rifles fired in automatic mode.",
+                            "aced": "62.5% of the enemy's headshot multiplier is applied to the enemy's body. This skill is only activated by Submachine Guns, Light Machineguns or Rifles fired in automatic mode."
                         }
                     ]
                 ]
@@ -423,27 +423,27 @@ var PAYDAY_TREES = [
                 "tiers": [
                     [
                         {
-                            "title": "Defense Up",
-                            "basic": "You gain the ability to automatically mark enemies within a 10 meter radius around you while standing still for 3.5 seconds while in stealth.",
+                            "title": "Sixth Sense",
+                            "basic": "Increases the time until you start getting detected while in casing mode by 25%. You can also mark enemies while in casing mode.",
                             "aced": "You can pick up items while in casing mode. You also gain 30% more value to loose items and cash that you pick up."
                         }
                     ],
                     [
                         {
                             "title": "Cleaner",
-                            "basic": "You gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%.",
-                            "aced": "You gain 1 additional body bag in your inventory and you gain the ability to carry 1 more body bag in addition to the gained body bag."
+                            "basic": "You gain 1 additional body bag in your inventory and you gain the ability to carry 1 more body bag in addition to the gained body bag.",
+                            "aced": "You gain the ability to place 2 body bag cases."
                         },
                         {
                             "title": "Chameleon",
-                            "basic": "You gain 25% increased concealment while in casing mode. You can also mark enemies while in casing mode.",
-                            "aced": "You gain the ability to loop 1 camera for 20 seconds, temporarily disabling it from detecting you and your crew."
+                            "basic": "You gain the ability to automatically mark enemies within a 10 meter radius around you after standing still for 3.5 seconds while in stealth.",
+                            "aced": "You gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%."
                         }
                     ],
                     [
                         {
                             "title": "Undertaker",
-                            "basic": "You gain the ability to place 2 body bag cases.",
+                            "basic": "	You gain the ability to loop 1 camera for 25 seconds, temporarily disabling it from detecting you and your crew.",
                             "aced": "You lockpick 50% faster. You also gain the ability to lockpick safes."
                         },
                         {
@@ -486,21 +486,21 @@ var PAYDAY_TREES = [
                     ],
                     [
                         {
-                            "title": "Sneaky Bastard",
-                            "basic": "You gain a 1% dodge chance for every 3 points of concealment under 35 up to a maximum of 10%.",
-                            "aced": "You gain a 1% dodge chance for every 1 point of concealment under 35 up to a maximum of 10%."
+                            "title": "Dire Need",
+                            "basic": "When your armor is depleted, the first shot on any enemies will cause those enemies to stagger. This effect ends when your armor regenerates.",
+                            "aced": "This effect persists for 6 seconds after your armor has regenerated."
                         },
                         {
                             "title": "Shockproof",
                             "basic": "The taser's shock attack has a 30% chance to backfire when targeted at you, causing the taser to be knocked back.",
-                            "aced": "When tased, you are able to free yourself from the taser by pressing [F] within 2 seconds of being tased."
+                            "aced": "When tased, you are able to free yourself from the taser by pressing [INTERACT] within 2 seconds of being tased."
                         }
                     ],
                     [
                         {
-                            "title": "Low Blow",
-                            "basic": "You gain a 3% critical hit chance for every 3 points of concealment under 35 up to a maximum of 30%.",
-                            "aced": "You gain a 3% critical hit chance for every 1 point of concealment under 35 up to a maximum of 30%."
+                            "title": "Sneaky Bastard",
+                            "basic": "You gain a 1% dodge chance for every 3 points of concealment under 35 up to a maximum of 10%.",
+                            "aced": "You gain a 1% dodge chance for every 1 point of concealment under 35 up to a maximum of 10%."
                         }
                     ]
                 ]
@@ -524,20 +524,20 @@ var PAYDAY_TREES = [
                         },
                         {
                             "title": "The Professional",
-                            "basic": "You gain a 50% increase to weapon stability and 100% zoom increase with silenced weapons.",
-                            "aced": "You gain a 50% increase to weapon accuracy with silenced weapons."
+                            "basic": "You gain 8 weapon stability and 100% snap to zoom speed increase with silenced weapons.",
+                            "aced": "You gain 12 weapon accuracy with silenced weapons."
                         }
                     ],
                     [
                         {
-                            "title": "Dire Need",
-                            "basic": "When your armor is depleted, the first shot on any enemies will cause those enemies to stagger. This effect ends when your armor regenerates.",
-                            "aced": "This effect persists for 6 seconds after your armor has regenerated."
+                            "title": "Low Blow",
+                            "basic": "You gain a 3% critical hit chance for every 3 points of concealment under 35 up to a maximum of 30%.",
+                            "aced": "You gain a 3% critical hit chance for every 1 point of concealment under 35 up to a maximum of 30%."
                         },
                         {
                             "title": "Subsonic Rounds",
-                            "basic": "You deal 15% more damage with all silenced weapons.",
-                            "aced": "You deal an additional 15% more damage with all silenced weapons."
+                            "basic": "You deal 7.5% more damage with all silenced weapons.",
+                            "aced": "You deal an additional 7.5% more damage with all silenced weapons."
                         }
                     ],
                     [
@@ -561,28 +561,16 @@ var PAYDAY_TREES = [
                 "tiers": [
                     [
                         {
-                            "title": "Fast draw",
+                            "title": "Equilibrium",
                             "basic": "Decreases the time it takes to equip and un-equip pistols by 80%.",
-                            "aced": "You gain 10% accuracy with pistols."
+                            "aced": "You gain 8 accuracy with pistols."
                         }
                     ],
                     [
                         {
-                            "title": "Dance Instructor",
-                            "basic": "Your pistol magazine sizes are increased by 15 bullets.",
+                            "title": "Gun Nut",
+                            "basic": "Your pistol magazine sizes are increased by 5 bullets.",
                             "aced": "You gain a 100% increased rate of fire with pistols."
-                        },
-                        {
-                            "title": "Expert Handling",
-                            "basic": "Each successful pistol hit gives you a 10% increased weapon accuracy bonus for 10 seconds and can stack 4 times.",
-                            "aced": "You reload pistols 50% faster."
-                        }
-                    ],
-                    [
-                        {
-                            "title": "Gun Play",
-                            "basic": "You deal 5 additional damage with pistols.",
-                            "aced": "You now deal 10 additional damage with pistols."
                         },
                         {
                             "title": "Akimbo",
@@ -592,9 +580,21 @@ var PAYDAY_TREES = [
                     ],
                     [
                         {
+                            "title": "Custom Ammo",
+                            "basic": "You deal 5 additional damage with pistols.",
+                            "aced": "You now deal 15 additional damage with pistols."
+                        },
+                        {
+                            "title": "Desperado",
+                            "basic": "Each successful pistol hit gives you a 10% increased weapon accuracy bonus for 10 seconds and can stack 4 times.",
+                            "aced": "You reload pistols 50% faster."
+                        }
+                    ],
+                    [
+                        {
                             "title": "Trigger Happy",
-                            "basic": "Each successful pistol hit grants a 10% damage boost for 6 seconds and can stack 4 times.",
-                            "aced": "Increases the damage boost duration to 20."
+                            "basic": "Each successful pistol hit grants a 20% damage boost for 6 seconds and can stack 4 times.",
+                            "aced": "Increases the damage boost duration to 10."
                         }
                     ]
                 ]
@@ -657,9 +657,9 @@ var PAYDAY_TREES = [
                     ],
                     [
                         {
-                            "title": "Frenzy",
-                            "basic": "You start at and cannot heal above 30% of your maximum health. You also take 40% less health damage.",
-                            "aced": "Health damage taken is now reduced by 60%."
+                            "title": "Bloodthirst",
+                            "basic": "Every kill you get will increase your next melee attack damage by 100%, up to a maximum of 300%. This effect gets reset when striking an enemy with a melee attack.",
+                            "aced": "Whenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for 10 seconds."
                         },
                         {
                             "title": "Pumping Iron",
@@ -669,9 +669,9 @@ var PAYDAY_TREES = [
                     ],
                     [
                         {
-                            "title": "Bloodthirst",
-                            "basic": "Every kill you get will increase your next melee attack damage by 50%, up to a maximum of 200%. This effect gets reset when striking an enemy with a melee attack.",
-                            "aced": "Whenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for X seconds."
+                            "title": "Berserker",
+                            "basic": "The lower your health, the more damage you do. When your health is below 50%, you will do up to 250% more melee and saw damage.",
+                            "aced": "The lower your health, the more damage you do. When your health is below 50%, you will do up to 100% more damage with ranged weapons as well."
                         },
                         {
                             "title": "Counter Strike",
@@ -681,9 +681,9 @@ var PAYDAY_TREES = [
                     ],
                     [
                         {
-                            "title": "Berserker",
-                            "basic": "The lower your health, the more damage you do. When your health is below 50%, you will do up to 250% more melee and saw damage.",
-                            "aced": "The lower your health, the more damage you do. When your health is below 50%, you will do up to 100% more damage with ranged weapons as well."
+                            "title": "Frenzy",
+                            "basic": "You start at and cannot heal above 30% of your maximum health. You also take 40% less health damage.",
+                            "aced": "Health damage taken is now reduced by 50% and headling is reduced by 50%."
                         }
                     ]
                 ]
