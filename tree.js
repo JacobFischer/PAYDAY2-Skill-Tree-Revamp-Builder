@@ -17,19 +17,19 @@ var PAYDAY_TREES = [
                         {
                             "title": "Quick Fix",
                             "basic": "Decreases your first aid kit and doctor bag deploy time by 50%.",
-                            "aced": "Crew members that use your first aid kits or doctor bags take 20% less damage for 10 seconds."
+                            "aced": "Crew members that use your first aid kits or doctor bags take 15% less damage for 120 seconds."
                         },
                         {
                             "title": "Painkillers",
                             "basic": "Crew members you revive take 30% less damage for 5 seconds.",
-                            "aced": "The damage reduction is increased by an additional 20%."
+                            "aced": "The damage reduction is increased by an additional 50%."
                         }
                     ],
                     [
                         {
                             "title": "Uppers",
                             "basic": "Adds 7 more first aid kits to your inventory.",
-                            "aced": "Adds 3 more first aid kits to your inventory. Your deployed first aid kits will be automatically used if a player would go down within a 15 meter radius of the first aid kit. Only 70% of the effect is triggered."
+                            "aced": "Adds 3 more First Aid Kits to your inventory. Your deployed First Aid Kits will be automatically used if a player is downed within a 5 meter radius of the First Aid Kit."
                         },
                         {
                             "title": "Combat Doctor",
@@ -98,14 +98,14 @@ var PAYDAY_TREES = [
                         {
                             "title": "Stable Shot",
                             "basic": "You gain 8 weapon stability.",
-                            "aced": "You gain 8 weapon accuracy while standing still."
+                            "aced": "You gain 16 weapon accuracy while standing still."
                         }
                     ],
                     [
                         {
                             "title": "Rifleman",
-                            "basic": "Your snap to zoom is 100% faster with all weapons.",
-                            "aced": "Your weapon zoom level is increased by 25% with all weapons."
+                            "basic": "Your snap to zoom is 100% faster with all weapons. Your movement speed is unhindered while using steel sight.",
+                            "aced": "Your weapon zoom level is increased by 25% with all weapons. Your weapon accuracy while moving with Assault Rifles and Sniper Rifles is increased by 50%."
                         },
                         {
                             "title": "Marksman",
@@ -121,15 +121,15 @@ var PAYDAY_TREES = [
                         },
                         {
                             "title": "Aggressive Reload",
-                            "basic": "Killing an enemy by headshot with the last bullet in the magazine will reduce your reload time by 30% for 2 seconds. Can only be triggered by SMG, Assault rifle, and Snipers fired in single shot.",
-                            "aced": "Any killing headshot will reduce your reload time by 50% for 2 seconds. Can only be triggered by SMG, Assault rifle, and Snipers fired in single shot."
+                            "basic": "Increases your reload speed with assault rifles by 15%.",
+                            "aced": "Any killing headshot will reduce your reload time by 40% for 2 seconds. Can only be triggered by SMG, Assault Rifle and Sniper Rifle fired in single shot."
                         }
                     ],
                     [
                         {
                             "title": "Ammo Efficiency",
                             "basic": "Hitting 6 headshots in a row will refund 1 bullet to your used weapon. Can only be triggered by SMG, Assault rifle, and Snipers fired in single shot.",
-                            "aced": "Hitting 3 headshots in a row will refund 1 bullet to your used weapon. Can only be triggered by SMG, Assault rifle, and Snipers fired in single shot."
+                            "aced": "Hitting 2 headshots in a row will refund 1 bullet to your used weapon. Can only be triggered by SMG, Assault rifle, and Snipers fired in single shot."
                         }
                     ]
                 ]
@@ -147,27 +147,27 @@ var PAYDAY_TREES = [
                     [
                         {
                             "title": "Underdog",
-                            "basic": "When you are surrounded by three enemies or more, you receive a 10% damage bonus.",
-                            "aced": "When you are surrounded by three enemies or more, you receive 10% less damage from enemies."
+                            "basic": "When you are surrounded by three enemies or more, you receive a 15% damage bonus.",
+                            "aced": "When you are surrounded by three enemies or more, you receive 15% less damage from enemies."
                         }
                     ],
                     [
                         {
                             "title": "Shotgun CQB",
-                            "basic": "You reload shotguns 25% faster.",
-                            "aced": "You reload shotguns 25% faster. You gain a 125% increased steel sight speed when using shotguns."
+                            "basic": "You reload shotguns 15% faster.",
+                            "aced": "You reload shotguns 35% faster (50% total). You gain a 125% increased steel sight speed when using shotguns."
                         },
                         {
                             "title": "Shotgun Impact",
-                            "basic": "Your weapon stability with all shotguns is increased by 8.",
-                            "aced": "You deal 35% more damage with shotguns."
+                            "basic": "Your weapon stability with all Shotguns is increased by 8. You deal 10% more damage with Shotguns.",
+                            "aced": "You now deal 35% more damage with Shotguns."
                         }
                     ],
                     [
                         {
                             "title": "Far Away",
                             "basic": "Your accuracy bonus while aiming down sights with shotguns is increased by 40%.",
-                            "aced": "You gain a 35% increased effective range with shotguns when aiming down sights."
+                            "aced": "You gain a 50% increased effective range with shotguns when aiming down sights."
                         },
                         {
                             "title": "Close By",
@@ -177,7 +177,7 @@ var PAYDAY_TREES = [
                     ],
                     [
                         {
-                            "title": "Overkill",
+                            "title": "OVERKILL",
                             "basic": "When you kill an enemy with a shotgun or the OVE9000 portable saw, you receive a 75% damage increase for 10 seconds.",
                             "aced": "The damage bonus now applies to all weapons. Skill must still be activated using a shotgun or the OVE9000 portable saw."
                         }
@@ -191,7 +191,7 @@ var PAYDAY_TREES = [
                     [
                         {
                             "title": "Oppressor",
-                            "basic": "Your weapons are 75% more effective at threatening enemies.",
+                            "basic": "Your armor recovers 15% faster.",
                             "aced": "Reduces the visual effect duration of flashbangs by 75%."
                         }
                     ],
@@ -222,7 +222,7 @@ var PAYDAY_TREES = [
                     [
                         {
                             "title": "Iron Man",
-                            "basic": "	Improves your armor so you can absorb 40% more damage.",
+                            "basic": "Improves your armor so you can absorb 40% more damage.",
                             "aced": "You gain the ability to wear the Improved Combined Tactical Vest."
                         }
                     ]
@@ -248,7 +248,7 @@ var PAYDAY_TREES = [
                         {
                             "title": "Portable Saw",
                             "basic": "Unlocks the OVE9000 portable saw for you to use as a secondary weapon.",
-                            "aced": "You gain 1 extra saw blade for the OVE9000 portable saw."
+                            "aced": "You gain 1 extra saw blade for the OVE9000 portable saw. You replace your saw blades with carbon blades, increasing your saw efficiency by 40%."
                         }
                     ],
                     [
@@ -259,7 +259,7 @@ var PAYDAY_TREES = [
                         },
                         {
                             "title": "Carbon Blade",
-                            "basic": "You replace your saw blades with carbon blades, increasing your saw efficiency by 40% and reducing the wear down of the blades on enemies by 50%.",
+                            "basic": "Reducing the wear down of the blades on enemies by 50%.",
                             "aced": "You can now saw through shield enemies with your OVE9000 portable saw. When killing an enemy with the saw, you have a 50% chance to cause enemies in a 10m radis to panic. Panic will makes enemies go into short bursts of uncontrollable fear."
                         }
                     ],
@@ -267,7 +267,7 @@ var PAYDAY_TREES = [
                         {
                             "title": "Fully Loaded",
                             "basic": "Your total ammo capacity is increased by 25%.",
-                            "aced": "Increases the amount of ammo you gain from ammo boxes by 75%. You also gain a X% base chance to get a throwable from an ammo box. The base chance is increased by Y% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to its base value. Note: Does not work with custom shotgun ammo and does not stack with the perk deck skill \"Walk-In Closet\"."
+                            "aced": "Increases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to its base value. Note: Does not work with custom shotgun ammo and does not stack with the perk deck skill \"Walk-in Closet\"."
                         }
                     ]
                 ]
@@ -305,19 +305,19 @@ var PAYDAY_TREES = [
                         {
                             "title": "Engineering",
                             "basic": "You can now select a less noisy version of the sentry guns, making them much less likely to be targeted by enemies.",
-                            "aced": "You can now toggle AP rounds on your sentry guns, lowering the rate of fire and ammunition count, but increasing damage and allowing it to pierce through enemies and shields."
+                            "aced": "You can now toggle AP rounds on your sentry guns, lowering the rate of fire by 75% , but increasing damage by 250% and allowing it to pierce through enemies and shields."
                         },
                         {
                             "title": "Jack of all Trades",
                             "basic": "You can deploy and interact with all deployables 50% faster.",
-                            "aced": "You can now equip a second deployable to bring with you. The second deployable has 50% less uses."
+                            "aced": "You can now equip a second deployable to bring with you. Pressing the \"x\" key will allow you to toggle between deployable. The second deployable has 50% less uses than normal."
                         }
                     ],
                     [
                         {
                             "title": "Tower Defense",
-                            "basic": "You can now carry 2 extra sentry guns.",
-                            "aced": "You can now carry an additional 2 extra sentry guns."
+                            "basic": "You can now carry 1 extra sentry guns.",
+                            "aced": "You can now carry an additional 3 extra sentry guns."
                         }
                     ]
                 ]
@@ -374,7 +374,7 @@ var PAYDAY_TREES = [
                         {
                             "title": "Steady Grip",
                             "basic": "You gain 8 weapon accuracy.",
-                            "aced": "You gain a decreased stability penalty when shooting while moving."
+                            "aced": "You gain 16 weapon stability."
                         }
                     ],
                     [
@@ -386,7 +386,7 @@ var PAYDAY_TREES = [
                         {
                             "title": "Fire Control",
                             "basic": "You gain 12 weapon accuracy while firing from the hip.",
-                            "aced": "You gain 12 weapon accuracy while firing from the hip."
+                            "aced": "You gain a decreased accuracy penalty by 20% when shooting while moving by."
                         }
                     ],
                     [
@@ -631,8 +631,8 @@ var PAYDAY_TREES = [
                         },
                         {
                             "title": "Feign Death",
-                            "basic": "When you get downed, you have a 25% chance to instantly get revived.",
-                            "aced": "The chance to instantly get revived is increased by an additional 50%."
+                            "basic": "When you get downed, you have a 15% chance to instantly get revived.",
+                            "aced": "The chance to instantly get revived is increased by an additional 30%."
                         }
                     ],
                     [
