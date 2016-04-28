@@ -10,11 +10,10 @@ var MAX_POINTS = 120;
 var INFAMY_BONUS = 4;
 
 var skillPointsPerTier = [
-    0,
-    1,
-    3,
-    18,
-    9999,
+    {required: 0, basic: 1, aced: 3},
+    {required: 1, basic: 2, aced: 4},
+    {required: 3, basic: 3, aced: 6},
+    {required: 18, basic: 4, aced: 8},
 ];
 
 var getUrlParameter = function getUrlParameter(sParam) {
@@ -81,11 +80,11 @@ function forEachSkill(callback) {
 };
 
 function updateHTML() {
-    var remaining = 104 - payday.points;
+    var remaining = MAX_POINTS + INFAMY_BONUS - payday.points;
     payday.$points
         .toggleClass("maxed", payday.points >= MAX_POINTS)
         .html(payday.points)
-        .attr("title", "" + remaining + " point" + (remaining === 1 ? "" : "s") + " remaining");
+        .attr("title", "" + remaining + " point" + plural(remaining) + " remaining");
 
     payday.$pointsMessage
         .removeClass("error warning")
@@ -110,8 +109,8 @@ function updateHTML() {
     forEachSubtree(function(subtree) {
         $(".subtree-" + subtree.number + "-points").html(subtree.points);
         for(var tier = 1; tier < skillPointsPerTier.length; tier++) {
-            var tierPoints = skillPointsPerTier[tier];
-            if(subtree.points < tierPoints && subtree.points >= skillPointsPerTier[tier-1]) {
+            var tierPoints = skillPointsPerTier[tier].required;
+            if(subtree.points < tierPoints && subtree.points >= skillPointsPerTier[tier-1].required) {
                  $(".subtree-" + subtree.number + "-tier-points").html(tierPoints);
                  break;
             }
@@ -173,12 +172,12 @@ function updateHTML() {
 };
 
 function updateURL() {
-	var values = {};
-	forEachSkill(function(skill) {
-		values[skill.number] = (skill.taken ? skill.taken[0].toLowerCase() : undefined);
-	});
+    var values = {};
+    forEachSkill(function(skill) {
+        values[skill.number] = (skill.taken ? skill.taken[0].toLowerCase() : undefined);
+    });
 
-	queryString.setAll(values);
+    queryString.setAll(values);
 };
 
 function calculatePoints() {
@@ -191,9 +190,11 @@ function calculatePoints() {
     forEachSkill(function(skill, tier, subtree) {
         skill.availible = false;
         if(skill.taken) {
-            var pts = 1 + tier.number;
+            var skillPoints = skillPointsPerTier[tier.number];
+            var pts = skillPoints[skill.taken];
+
             if(skill.taken === "aced") {
-                pts += pts + 2;
+                pts += skillPoints.basic;
             }
 
             for(var i = tier.number; i < 5; i++) {
@@ -208,7 +209,7 @@ function calculatePoints() {
     var recalculate = false;
     forEachSkill(function(skill, tier, subtree) {
         if(tier.number > 0) {
-            var neededPointsInTier = skillPointsPerTier[tier.number];
+            var neededPointsInTier = skillPointsPerTier[tier.number].required;
             var pts = subtree.pointsPerTier[tier.number - 1];
 
             if(neededPointsInTier <= pts) {
@@ -254,7 +255,7 @@ function buildTable() {
 
     for(var t = subtree.tiers.length-1; t >= 0; t--) { // reverse order so we start at the top skill and go down for html elements
         var tier = subtree.tiers[t];
-        var pts = skillPointsPerTier[t];
+        var pts = skillPointsPerTier[t].required;
         var $tr = $("<tr>")
             .appendTo($table)
             .attr("id", "tier-" + t)
@@ -274,7 +275,7 @@ function buildTable() {
             m--;
             if(s === tier.length-1 && m !== 0) { // then span this last td
                 $td.attr("colspan", 1 + m);
-            }
+            };
 
             var $skill = $("<div>")
                 .appendTo($td)
@@ -296,7 +297,7 @@ function buildTable() {
                     )
                     .append($("<div>")
                         .addClass("cost")
-                        .html(1 + t + i*2)
+                        .html(skillPointsPerTier[tier.number][type])
                     );
 
                 skill["$" + type] = $part;
@@ -387,7 +388,7 @@ function initHTML() {
         .append($("<th>").html("Subtree"))
 
     for(var i = 0; i < payday.numberOfTiers; i++) {
-        var pts = skillPointsPerTier[i];
+        var pts = skillPointsPerTier[i].required;
         $overviewTR.append($("<th>")
             .html("Tier " + (i+1) +" (" + pts + " point" + plural(pts) + ")")
             .addClass("overview-tier-heading")
@@ -439,10 +440,11 @@ function initHTML() {
 
             for(var j = 0; j < tier.length; j++) {
                 var skill = tier[j];
+                var skillPoints = skillPointsPerTier[i];
                 var $overviewSkill = $("<div>")
                     .appendTo($overviewTier)
                     .addClass("skill skill-" + skill.number)
-                    .attr("title", "Basic (" + (i+1) + " point" + (i === 0 ? "" : "s") + "):\n • "+ skill.basic + "\n———\nAced (" + (i+3) + " points):\n • " + skill.aced)
+                    .attr("title", "Basic (" + skillPoints.basic + " point" + plural(skillPoints.basic) + "):\n • "+ skill.basic + "\n———\nAced (" + skillPoints.aced + " point" + plural(skillPoints.aced) + "):\n • " + skill.aced)
                     .html(skill.title);
 
                 (function(skill, $overviewSkill) {
