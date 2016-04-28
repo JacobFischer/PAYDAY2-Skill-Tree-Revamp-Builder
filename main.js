@@ -6,6 +6,9 @@ var payday = {
     points: 0,
 };
 
+var MAX_POINTS = 120;
+var INFAMY_BONUS = 4;
+
 var skillPointsPerTier = [
     0,
     1,
@@ -80,7 +83,7 @@ function forEachSkill(callback) {
 function updateHTML() {
     var remaining = 104 - payday.points;
     payday.$points
-        .toggleClass("maxed", payday.points >= 100)
+        .toggleClass("maxed", payday.points >= MAX_POINTS)
         .html(payday.points)
         .attr("title", "" + remaining + " point" + (remaining === 1 ? "" : "s") + " remaining");
 
@@ -88,16 +91,18 @@ function updateHTML() {
         .removeClass("error warning")
         .html("");
 
-    if(payday.points >= 105) {
+    if(payday.points >= MAX_POINTS + INFAMY_BONUS + 1) {
         payday.$pointsMessage
             .addClass("error")
             .html("Invalid!")
             .attr("title", "You have allocated to many points. This build will not be possible in game.");
     }
-    else if(payday.points > 100 && payday.points < 105) {
+    else if(payday.points > MAX_POINTS && payday.points <= (MAX_POINTS + INFAMY_BONUS)) {
+        var n = 1 + payday.points - MAX_POINTS; // +1 for the first infamy level which has no bonus point
+        console.log("n", n)
         payday.$pointsMessage
             .addClass("warning")
-            .html("Requires Infamy " + romanize(payday.points - 99)) // 100 - 1 = 99, -1 because... (below)
+            .html("Requires Infamy " + romanize(n))
             .attr("title", "The Mastermind, Enforcer, Technician, and Ghost infamy masts availible during infamy levels II-V each grant an additional point.");
     }
 
@@ -350,6 +355,7 @@ function initHTML() {
     payday.$pointsMessage = $("#points-message");
     payday.$buildOverview = $("#build-overview");
     payday.$buildOverviewTable = $("table", payday.$buildOverview);
+    payday.$maxPoints = $("#max-points").html(MAX_POINTS);
     payday.$buildName = $("#build-name").on("change", function() {
         var newVal = payday.$buildName.val();
         if(newVal && newVal !== payday.generatedName) {
