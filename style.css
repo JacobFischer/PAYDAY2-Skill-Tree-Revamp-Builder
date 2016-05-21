@@ -209,6 +209,17 @@ h1#site-title {
 	text-align: center;
 }
 
+.alert.big {
+	font-size: 2em;
+}
+
+.alert {
+	color: yellow;
+	text-align: center;
+	display: block;
+	margin: 1em 0;
+}
+
 #current-subtree > table {
 	margin: 0 auto;
 }

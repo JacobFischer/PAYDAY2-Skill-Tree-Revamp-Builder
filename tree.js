@@ -54,7 +54,7 @@ var PAYDAY_TREES = [
                         {
                             "title": "Endurance",
                             "basic": "Increases your supply of cable ties by 4. You can cable tie hostages 75% faster.",
-                            "aced": "Increases your stamina by 150% and your crew's stamina by 50%. Civilians are intimidated by the noise you make and remain intimidated 50% longer."
+                            "aced": "Increases your stamina by 150% and your crew's stamina by 50%."
                         }
                     ],
                     [
@@ -178,8 +178,8 @@ var PAYDAY_TREES = [
                     [
                         {
                             "title": "OVERKILL",
-                            "basic": "When you kill an enemy with a shotgun or the OVE9000 portable saw, you receive a 75% damage increase for 10 seconds.",
-                            "aced": "The damage bonus now applies to all weapons. Skill must still be activated using a shotgun or the OVE9000 portable saw."
+                            "basic": "When you kill an enemy with a Shotgun or the OVE9000 portable saw, you receive a 75% damage increase for 30 seconds.",
+                            "aced": "The damage bonus now applies to all weapons. Skill must still be activated using a Shotgun or the OVE9000 portable saw. Your weapon swap speed is increased by 80%."
                         }
                     ]
                 ]
@@ -380,8 +380,8 @@ var PAYDAY_TREES = [
                     [
                         {
                             "title": "Heavy Impact",
-                            "basic": "Your shots have a 20% chance to knock down enemies.",
-                            "aced": "Your shots now have a 60% chance to knock down enemies."
+                            "basic": "Your shots have a 5% chance to knock down enemies.",
+                            "aced": "Your shots now have a 20% chance to knock down enemies."
                         },
                         {
                             "title": "Fire Control",
@@ -476,7 +476,7 @@ var PAYDAY_TREES = [
                         {
                             "title": "Evasion",
                             "basic": "You gain 10% additional movement speed and 20% climbing speed.",
-                            "aced": "You gain the ability to sprint in any direction. Your fall damage is also reduced by 75% and you only take armor damage from falling from non-fatal heights."
+                            "aced": "You gain the ability to sprint in any direction. Run and reload - you can now reload your weapons while sprinting."
                         },
                         {
                             "title": "Thick Skin",
@@ -574,7 +574,7 @@ var PAYDAY_TREES = [
                         },
                         {
                             "title": "Akimbo",
-                            "basic": "Akimbo weapons gain 24 weapon stability.",
+                            "basic": "Akimbo weapons gain 8 weapon stability.",
                             "aced": "Akimbo weapons gain an additional 8 weapon stability and have a 50% increased total ammo capacity."
                         }
                     ],

@@ -7,7 +7,7 @@ var payday = {
 };
 
 var MAX_POINTS = 120;
-var INFAMY_BONUS = 4;
+var INFAMY_BONUS = 0;
 
 var skillPointsPerTier = [
     {required: 0, basic: 1, aced: 3},
